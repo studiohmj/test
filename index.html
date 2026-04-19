@@ -19,6 +19,7 @@
     <div class="nav__logo">Jang Hoon Min</div>
     <ul class="nav__links">
       <li><a href="#about">About</a></li>
+      <li><a href="profile.html">Profile</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#awards">Awards</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -34,10 +35,11 @@
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-      <li><a href="#about"   class="mobile-link">About</a></li>
-      <li><a href="#work"    class="mobile-link">Work</a></li>
-      <li><a href="#awards"  class="mobile-link">Awards</a></li>
-      <li><a href="#contact" class="mobile-link">Contact</a></li>
+      <li><a href="#about"        class="mobile-link">About</a></li>
+      <li><a href="profile.html"  class="mobile-link">Profile</a></li>
+      <li><a href="#work"         class="mobile-link">Work</a></li>
+      <li><a href="#awards"       class="mobile-link">Awards</a></li>
+      <li><a href="#contact"      class="mobile-link">Contact</a></li>
     </ul>
   </div>
 
@@ -111,13 +113,8 @@
       <div class="about__main">
 
         <div class="about__photo-col fade-in">
-          <!--
-            ✏️ REPLACE: swap the div below with:
-            <img src="images/profile.jpg" alt="Jang Hoon Min" class="about__photo" />
-          -->
-          <div class="about__image-placeholder">
-            <span>Photo Coming Soon</span>
-          </div>
+          <img src="메인 이미지/메인 포스터 이미지/1.png" alt="Designing What Remains — Jang Hoon Min" class="about__photo" />
+          <p class="about__photo-note">Profile photo — coming soon</p>
 
           <!-- Quiet identity facts below photo -->
           <dl class="about__facts">
@@ -186,43 +183,10 @@
 
       </div><!-- /about__main -->
 
-      <!-- ③ Credential bar — compact, curated, not a résumé -->
-      <div class="about__credentials fade-in">
-
-        <div class="about__cred-col">
-          <span class="about__cred-label">Education</span>
-          <p class="about__cred-value">Sungkyunkwan University</p>
-          <p class="about__cred-sub">Graduate School — Communication Design<br/>2025 – 2027 (Ongoing)</p>
-          <p class="about__cred-value" style="margin-top:1rem;">Shinhan University</p>
-          <p class="about__cred-sub">B.A. Industrial Design, 2024</p>
-        </div>
-
-        <div class="about__cred-col">
-          <span class="about__cred-label">Focus Areas</span>
-          <div class="about__tags">
-            <span class="tag">Branding</span>
-            <span class="tag">Visual Identity</span>
-            <span class="tag">Editorial Design</span>
-            <span class="tag">Graphic Design</span>
-            <span class="tag">UI / Web Design</span>
-            <span class="tag">Art Direction</span>
-          </div>
-        </div>
-
-        <div class="about__cred-col">
-          <span class="about__cred-label">Tools &amp; Licences</span>
-          <div class="about__tags">
-            <span class="tag">Figma</span>
-            <span class="tag">Photoshop</span>
-            <span class="tag">Illustrator</span>
-            <span class="tag">InDesign</span>
-            <span class="tag">After Effects</span>
-            <span class="tag">GTQ 1급</span>
-            <span class="tag">GTQI 1급</span>
-          </div>
-        </div>
-
-      </div><!-- /about__credentials -->
+      <!-- Profile CTA -->
+      <div class="about__profile-cta fade-in">
+        <a href="profile.html" class="btn btn--ghost">View Full Profile →</a>
+      </div>
 
     </div>
   </section>
@@ -241,7 +205,7 @@
         </div>
         <div class="stat fade-in">
           <!-- ✏️ REPLACE: update when real award count is confirmed -->
-          <strong class="stat__number" data-target="0">—</strong>
+          <strong class="stat__number" data-target="5">0</strong>
           <span class="stat__label">Awards</span>
         </div>
         <div class="stat fade-in">
@@ -266,21 +230,21 @@
       <!-- ── FEATURED: Leporem ──────────────────────────────── -->
       <article class="proj proj--featured fade-in" data-category="brand">
         <div class="proj__image">
-          <img src="메인 이미지/1 - Leporem-100.jpg" alt="Leporem" class="proj__img" />
-          <a href="project.html" class="proj__view-pill">View Project ↗</a>
+          <img src="메인 이미지/1. Leporem/르포렘 1p-100.jpg" alt="Leporem" class="proj__img" />
+          <a href="leporem.html" class="proj__view-pill">View Project ↗</a>
         </div>
         <div class="proj__info">
           <span class="proj__index">01</span>
           <h3 class="proj__title proj__title--lg">Leporem</h3>
-          <div class="proj__meta">Branding · Visual Identity · 2024</div>
-          <p class="proj__desc">시각장애인을 위한 향수 브랜드. 점자와 촉각 언어를 브랜드 정체성으로 전환했습니다.</p>
+          <div class="proj__meta">Branding Design<br/>2024</div>
+          <p class="proj__desc">시각장애인을 위한 향수 브랜드. 점자와 촉각 언어를 브랜드 아이덴티티로 전환했습니다.</p>
         </div>
       </article>
 
-      <!-- ── BRANDING GROUP ──────────────────────────────────── -->
+      <!-- ── GROUP 1: Branding ────────────────────────────────── -->
       <div class="work__group fade-in">
         <div class="work__group-label">
-          <span>Branding &amp; Visual Identity</span>
+          <span>Branding Design</span>
           <div class="work__group-line"></div>
         </div>
 
@@ -288,155 +252,102 @@
           <!-- 02 늘푸른 -->
           <article class="proj" data-category="brand">
             <div class="proj__image">
-              <img src="메인 이미지/6 - 늘푸른-100.jpg" alt="늘푸른" class="proj__img" />
-              <a href="project.html" class="proj__view-pill">View ↗</a>
+              <img src="메인 이미지/8. 늘푸른/늘푸른 (1).jpg" alt="늘푸른" class="proj__img" />
+              <a href="neulpureun.html" class="proj__view-pill">View ↗</a>
             </div>
             <div class="proj__info">
               <span class="proj__index">02</span>
               <h3 class="proj__title">늘푸른</h3>
-              <div class="proj__meta">Branding · 2023</div>
-              <p class="proj__desc">은퇴 노인을 위한 공간 브랜드. 따뜻하고 안정적인 정체성을 설계했습니다.</p>
+              <div class="proj__meta">Branding Design<br/>2024</div>
+              <p class="proj__desc">은퇴 노인을 위한 복합 문화 공간 브랜드.</p>
             </div>
           </article>
 
           <!-- 03 한결 -->
-          <article class="proj" data-category="identity">
+          <article class="proj" data-category="brand">
             <div class="proj__image">
-              <img src="메인 이미지/8 - 한결-100.jpg" alt="한결" class="proj__img" />
-              <a href="project.html" class="proj__view-pill">View ↗</a>
+              <img src="메인 이미지/7. 한결/한결 (1).jpg" alt="한결" class="proj__img" />
+              <a href="hangyeol.html" class="proj__view-pill">View ↗</a>
             </div>
             <div class="proj__info">
               <span class="proj__index">03</span>
               <h3 class="proj__title">한결</h3>
-              <div class="proj__meta">Visual Identity · 2023</div>
-              <p class="proj__desc">노인 미술치료 프로그램의 브랜드 아이덴티티. 일관성과 온기를 시각 언어로 풀었습니다.</p>
+              <div class="proj__meta">Branding Design<br/>2024</div>
+              <p class="proj__desc">노인 미술치료 프로그램 브랜드. 일관성과 온기를 시각 언어로 풀었습니다.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="proj-row proj-row--2">
+          <!-- 04 Yellow House -->
+          <article class="proj" data-category="brand">
+            <div class="proj__image">
+              <img src="메인 이미지/5 - Yellow House-100.jpg" alt="Yellow House" class="proj__img" />
+              <a href="yellowhouse.html" class="proj__view-pill">View ↗</a>
+            </div>
+            <div class="proj__info">
+              <span class="proj__index">04</span>
+              <h3 class="proj__title">Yellow House</h3>
+              <div class="proj__meta">Branding Design<br/>2024</div>
+              <p class="proj__desc">신진 예술가를 위한 전시 공간이 있는 카페 브랜드.</p>
+            </div>
+          </article>
+
+          <!-- 05 Pacemaker -->
+          <article class="proj" data-category="brand">
+            <div class="proj__image">
+              <img src="메인 이미지/4 - PACEMAKER-100.jpg" alt="Pacemaker" class="proj__img" />
+              <a href="pacemaker.html" class="proj__view-pill">View ↗</a>
+            </div>
+            <div class="proj__info">
+              <span class="proj__index">05</span>
+              <h3 class="proj__title">Pacemaker</h3>
+              <div class="proj__meta">Branding Design<br/>2024</div>
+              <p class="proj__desc">20대 취업 조력 브랜드. 나만의 속도로 방향을 찾는다.</p>
             </div>
           </article>
         </div>
 
         <div class="proj-row proj-row--3">
-          <!-- 04 라온 -->
+          <!-- 06 For Care -->
           <article class="proj" data-category="brand">
             <div class="proj__image">
-              <img src="메인 이미지/9 - 라온-100.jpg" alt="라온" class="proj__img" />
-              <a href="project.html" class="proj__view-pill">View ↗</a>
-            </div>
-            <div class="proj__info">
-              <span class="proj__index">04</span>
-              <h3 class="proj__title">라온</h3>
-              <div class="proj__meta">Branding · 2023</div>
-              <p class="proj__desc">10대 경계선 장애 청소년 지원 브랜드.</p>
-            </div>
-          </article>
-
-          <!-- 05 유니즌 -->
-          <article class="proj" data-category="identity">
-            <div class="proj__image">
-              <img src="메인 이미지/7 - Unison-100.jpg" alt="유니즌" class="proj__img" />
-              <a href="project.html" class="proj__view-pill">View ↗</a>
-            </div>
-            <div class="proj__info">
-              <span class="proj__index">05</span>
-              <h3 class="proj__title">유니즌</h3>
-              <div class="proj__meta">Visual Identity · 2023</div>
-              <p class="proj__desc">다문화 10대를 위한 커뮤니티 브랜드.</p>
-            </div>
-          </article>
-
-          <!-- 06 Yellow House -->
-          <article class="proj" data-category="brand">
-            <div class="proj__image">
-              <img src="메인 이미지/5 - Yellow House-100.jpg" alt="Yellow House" class="proj__img" />
-              <a href="project.html" class="proj__view-pill">View ↗</a>
+              <img src="메인 이미지/10 - For Care-100.jpg" alt="For Care" class="proj__img" />
+              <a href="forcare.html" class="proj__view-pill">View ↗</a>
             </div>
             <div class="proj__info">
               <span class="proj__index">06</span>
-              <h3 class="proj__title">Yellow House</h3>
-              <div class="proj__meta">Branding · 2023</div>
-              <p class="proj__desc">로컬 카페의 브랜드 아이덴티티 및 공간 그래픽.</p>
+              <h3 class="proj__title">For Care</h3>
+              <div class="proj__meta">Branding Design<br/>2024</div>
+              <p class="proj__desc">청각장애인을 위한 의료 앱 브랜드.</p>
             </div>
           </article>
-        </div>
-      </div>
 
-      <!-- ── BRANDING GROUP 2 ────────────────────────────────── -->
-      <div class="work__group fade-in">
-        <div class="work__group-label">
-          <span>Graphic &amp; Communication</span>
-          <div class="work__group-line"></div>
-        </div>
-
-        <div class="proj-row proj-row--asym">
-          <!-- 07 For Care -->
+          <!-- 07 Vogrodi -->
           <article class="proj" data-category="brand">
             <div class="proj__image">
-              <img src="프로젝트6 - For Care (청각장애인 의료)/목업 이미지/스테이셔너리-목업.jpg" alt="For Care" class="proj__img proj__img--tall" />
-              <a href="project.html" class="proj__view-pill">View ↗</a>
+              <img src="메인 이미지/3  -Vogload-100.jpg" alt="Vogrodi" class="proj__img" />
+              <a href="vogrodi.html" class="proj__view-pill">View ↗</a>
             </div>
             <div class="proj__info">
               <span class="proj__index">07</span>
-              <h3 class="proj__title">For Care</h3>
-              <div class="proj__meta">Branding · 2024</div>
-              <p class="proj__desc">청각장애인 의료 서비스 브랜드. 접근성과 신뢰를 시각화했습니다.</p>
+              <h3 class="proj__title">Vogrodi</h3>
+              <div class="proj__meta">Branding Design<br/>2024</div>
+              <p class="proj__desc">공정하고 안전한 패션 경매 플랫폼.</p>
             </div>
           </article>
 
-          <!-- 08 + 09 stacked -->
-          <div class="proj-col--sm">
-            <article class="proj" data-category="brand">
-              <div class="proj__image">
-                <img src="프로젝트8 - Vogrodi (패션경매)/목업 이미지/스테이셔너리-목업.jpg" alt="Vogrodi" class="proj__img" />
-                <a href="project.html" class="proj__view-pill">View ↗</a>
-              </div>
-              <div class="proj__info">
-                <span class="proj__index">08</span>
-                <h3 class="proj__title">Vogrodi</h3>
-                <div class="proj__meta">Branding · 2024</div>
-                <p class="proj__desc">패션 경매 플랫폼 브랜드 아이덴티티.</p>
-              </div>
-            </article>
-
-            <article class="proj" data-category="brand">
-              <div class="proj__image">
-                <img src="프로젝트9 - 청정익선 (청정한 익선동)/목업 이미지/Project111111111.png" alt="청정익선" class="proj__img" />
-                <a href="project.html" class="proj__view-pill">View ↗</a>
-              </div>
-              <div class="proj__info">
-                <span class="proj__index">09</span>
-                <h3 class="proj__title">청정익선</h3>
-                <div class="proj__meta">Branding · 2023</div>
-                <p class="proj__desc">익선동 로컬 브랜드 캠페인 및 그래픽 시스템.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-
-        <div class="proj-row proj-row--2">
-          <!-- 10 Pacemaker -->
+          <!-- 08 청정익선 -->
           <article class="proj" data-category="brand">
             <div class="proj__image">
-              <img src="프로젝트10 - Pacemaker (청년 취업)/목업 이미지/스테이셔너리.jpg" alt="Pacemaker" class="proj__img" />
-              <a href="project.html" class="proj__view-pill">View ↗</a>
+              <img src="메인 이미지/2 - 청정익선-100.jpg" alt="청정익선" class="proj__img" />
+              <a href="ikseondong.html" class="proj__view-pill">View ↗</a>
             </div>
             <div class="proj__info">
-              <span class="proj__index">10</span>
-              <h3 class="proj__title">Pacemaker</h3>
-              <div class="proj__meta">Branding · 2024</div>
-              <p class="proj__desc">청년 취업 지원 서비스 브랜드 아이덴티티.</p>
-            </div>
-          </article>
-
-          <!-- 11 라온 웹 -->
-          <article class="proj" data-category="ui">
-            <div class="proj__image">
-              <img src="프로젝트3 - 라온 (10대 경계선장애)/목업 이미지/라온-웹.jpg" alt="라온 Web" class="proj__img" />
-              <a href="project.html" class="proj__view-pill">View ↗</a>
-            </div>
-            <div class="proj__info">
-              <span class="proj__index">11</span>
-              <h3 class="proj__title">라온 — Web</h3>
-              <div class="proj__meta">UI / Web Design · 2023</div>
-              <p class="proj__desc">라온 브랜드의 웹 인터페이스 디자인.</p>
+              <span class="proj__index">08</span>
+              <h3 class="proj__title">청정익선</h3>
+              <div class="proj__meta">Branding Design<br/>2024</div>
+              <p class="proj__desc">익선동 환경 보호 캠페인 브랜드.</p>
             </div>
           </article>
         </div>
@@ -456,34 +367,47 @@
       </div>
 
       <div class="awards__list">
-        <!--
-          ✏️ REPLACE: Add real award entries in this format:
-          Year / 수상명 / 주최기관 / 수상결과
-          Add or duplicate <div class="award-item"> blocks as needed.
-        -->
         <div class="award-item fade-in">
-          <div class="award-item__year">—</div>
+          <div class="award-item__year">2026</div>
           <div class="award-item__body">
-            <h3 class="award-item__title">Award Name — To Be Added</h3>
-            <p class="award-item__org">Organisation · Category</p>
-          </div>
-          <div class="award-item__badge">🏆</div>
-        </div>
-
-        <div class="award-item fade-in">
-          <div class="award-item__year">—</div>
-          <div class="award-item__body">
-            <h3 class="award-item__title">Award Name — To Be Added</h3>
-            <p class="award-item__org">Organisation · Category</p>
+            <h3 class="award-item__title">국제창의예술디자인대전 금상</h3>
+            <p class="award-item__org">국제창의예술디자인대전 · 2026.02.06</p>
           </div>
           <div class="award-item__badge">🥇</div>
         </div>
 
         <div class="award-item fade-in">
-          <div class="award-item__year">—</div>
+          <div class="award-item__year">2025</div>
           <div class="award-item__body">
-            <h3 class="award-item__title">Award Name — To Be Added</h3>
-            <p class="award-item__org">Organisation · Category</p>
+            <h3 class="award-item__title">GCDFE 글로벌 미래 교육 디자인 대회 우수상</h3>
+            <p class="award-item__org">GCDFE · 2025.06.25</p>
+          </div>
+          <div class="award-item__badge">✦</div>
+        </div>
+
+        <div class="award-item fade-in">
+          <div class="award-item__year">2024</div>
+          <div class="award-item__body">
+            <h3 class="award-item__title">신한대학교 모범 졸업생 표창</h3>
+            <p class="award-item__org">신한대학교 · 2024.02.15</p>
+          </div>
+          <div class="award-item__badge">✦</div>
+        </div>
+
+        <div class="award-item fade-in">
+          <div class="award-item__year">2023</div>
+          <div class="award-item__body">
+            <h3 class="award-item__title">청년 디자인 콘텐츠 지원단 공로상</h3>
+            <p class="award-item__org">청년 디자인 · 2023.12.31</p>
+          </div>
+          <div class="award-item__badge">✦</div>
+        </div>
+
+        <div class="award-item fade-in">
+          <div class="award-item__year">2023</div>
+          <div class="award-item__body">
+            <h3 class="award-item__title">청년 디자인 멘토 공로상</h3>
+            <p class="award-item__org">청년 디자인 · 2023.11.21</p>
           </div>
           <div class="award-item__badge">✦</div>
         </div>
