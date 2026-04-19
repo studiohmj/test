@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jang Hoon Min — Branding Designer</title>
+  <meta name="description" content="Portfolio of Jang Hoon Min (장훈민) — Branding Designer focused on visual identity, clarity, and narrative." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="glow" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">Jang Hoon Min</div>
+    <ul class="nav__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-toggle__icon">☀</span>
+    </button>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about"   class="mobile-link">About</a></li>
+      <li><a href="#work"    class="mobile-link">Work</a></li>
+      <li><a href="#awards"  class="mobile-link">Awards</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ============================
+       HERO
+  ============================= -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+
+    <div class="hero__content">
+
+      <h1 class="hero__statement">
+        <span class="hero__statement-line line">I DESIGN</span>
+        <span class="hero__statement-line line">HOW BRANDS</span>
+        <span class="hero__statement-line hero__statement-line--accent line">ARE REMEMBERED</span>
+      </h1>
+
+      <div class="hero__divider"></div>
+
+      <div class="hero__bottom line">
+        <div class="hero__identity">
+          <p class="hero__name-sub">Jang Hoon Min</p>
+          <p class="hero__role-sub">Branding Designer</p>
+          <p class="hero__desc-kr">브랜드가 기억되는 방식을 설계합니다.</p>
+        </div>
+        <div class="hero__cta">
+          <a href="#work"    class="btn btn--primary">View Work</a>
+          <a href="#contact" class="btn btn--ghost">Contact</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hero__scroll" aria-hidden="true">Scroll</div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Branding</span><span>·</span>
+      <span>Visual Identity</span><span>·</span>
+      <span>Editorial Design</span><span>·</span>
+      <span>Graphic Design</span><span>·</span>
+      <span>UI / Web Design</span><span>·</span>
+      <span>Art Direction</span><span>·</span>
+      <span>Branding</span><span>·</span>
+      <span>Visual Identity</span><span>·</span>
+      <span>Editorial Design</span><span>·</span>
+      <span>Graphic Design</span><span>·</span>
+      <span>UI / Web Design</span><span>·</span>
+      <span>Art Direction</span><span>·</span>
+    </div>
+  </div>
+
+  <!-- ============================
+       ABOUT
+  ============================= -->
+  <section class="about section" id="about">
+    <div class="container">
+
+      <!-- ① Full-width statement -->
+      <div class="about__intro fade-in">
+        <p class="section__label">About</p>
+        <h2 class="about__statement">
+          I design brands<br />
+          that people <em>actually remember.</em>
+        </h2>
+      </div>
+
+      <!-- ② Photo col + Approach col -->
+      <div class="about__main">
+
+        <div class="about__photo-col fade-in">
+          <!--
+            ✏️ REPLACE: swap the div below with:
+            <img src="images/profile.jpg" alt="Jang Hoon Min" class="about__photo" />
+          -->
+          <div class="about__image-placeholder">
+            <span>Photo Coming Soon</span>
+          </div>
+
+          <!-- Quiet identity facts below photo -->
+          <dl class="about__facts">
+            <div class="about__fact">
+              <dt>Based</dt>
+              <dd>Seoul, Korea</dd>
+            </div>
+            <div class="about__fact">
+              <dt>Currently</dt>
+              <dd>M.A. Communication Design<br/>Sungkyunkwan University</dd>
+            </div>
+            <div class="about__fact">
+              <dt>Open to</dt>
+              <dd>Freelance &amp; Collaboration</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="about__text-col fade-in">
+          <p class="about__body">
+            I'm a branding designer. I work between identity and communication —
+            building visual systems that are precise, considered, and hard to forget.
+          </p>
+          <p class="about__body about__body--kr">
+            브랜드가 말해야 할 것을, 정확하게 시각화하는 일을 합니다.
+          </p>
+
+          <div class="about__approach">
+            <div class="about__approach-item">
+              <span class="about__approach-num">01</span>
+              <div>
+                <h4 class="about__approach-title">Clarity</h4>
+                <p class="about__approach-desc">Cut everything that isn't the point.</p>
+              </div>
+            </div>
+            <div class="about__approach-item">
+              <span class="about__approach-num">02</span>
+              <div>
+                <h4 class="about__approach-title">Narrative</h4>
+                <p class="about__approach-desc">A brand without a story is just a logo.</p>
+              </div>
+            </div>
+            <div class="about__approach-item">
+              <span class="about__approach-num">03</span>
+              <div>
+                <h4 class="about__approach-title">Identity</h4>
+                <p class="about__approach-desc">Make it unmistakably theirs.</p>
+              </div>
+            </div>
+            <div class="about__approach-item">
+              <span class="about__approach-num">04</span>
+              <div>
+                <h4 class="about__approach-title">Structure</h4>
+                <p class="about__approach-desc">How things sit on the page is a decision, not a default.</p>
+              </div>
+            </div>
+            <div class="about__approach-item">
+              <span class="about__approach-num">05</span>
+              <div>
+                <h4 class="about__approach-title">Emotion</h4>
+                <p class="about__approach-desc">A brand you don't feel, you won't remember.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /about__main -->
+
+      <!-- ③ Credential bar — compact, curated, not a résumé -->
+      <div class="about__credentials fade-in">
+
+        <div class="about__cred-col">
+          <span class="about__cred-label">Education</span>
+          <p class="about__cred-value">Sungkyunkwan University</p>
+          <p class="about__cred-sub">Graduate School — Communication Design<br/>2025 – 2027 (Ongoing)</p>
+          <p class="about__cred-value" style="margin-top:1rem;">Shinhan University</p>
+          <p class="about__cred-sub">B.A. Industrial Design, 2024</p>
+        </div>
+
+        <div class="about__cred-col">
+          <span class="about__cred-label">Focus Areas</span>
+          <div class="about__tags">
+            <span class="tag">Branding</span>
+            <span class="tag">Visual Identity</span>
+            <span class="tag">Editorial Design</span>
+            <span class="tag">Graphic Design</span>
+            <span class="tag">UI / Web Design</span>
+            <span class="tag">Art Direction</span>
+          </div>
+        </div>
+
+        <div class="about__cred-col">
+          <span class="about__cred-label">Tools &amp; Licences</span>
+          <div class="about__tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Photoshop</span>
+            <span class="tag">Illustrator</span>
+            <span class="tag">InDesign</span>
+            <span class="tag">After Effects</span>
+            <span class="tag">GTQ 1급</span>
+            <span class="tag">GTQI 1급</span>
+          </div>
+        </div>
+
+      </div><!-- /about__credentials -->
+
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats section--sm">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat fade-in">
+          <strong class="stat__number" data-target="7">0</strong>
+          <span class="stat__label">Years in Design</span>
+        </div>
+        <div class="stat fade-in">
+          <strong class="stat__number" data-target="4">0</strong>
+          <span class="stat__label">Certifications</span>
+        </div>
+        <div class="stat fade-in">
+          <!-- ✏️ REPLACE: update when real award count is confirmed -->
+          <strong class="stat__number" data-target="0">—</strong>
+          <span class="stat__label">Awards</span>
+        </div>
+        <div class="stat fade-in">
+          <strong class="stat__number" data-target="2">0</strong>
+          <span class="stat__label">Degrees</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================
+       WORK — Editorial Layout
+  ============================= -->
+  <section class="work section" id="work">
+    <div class="container">
+
+      <div class="work__header fade-in">
+        <p class="section__label">Selected Work</p>
+        <h2 class="section__title">Projects</h2>
+      </div>
+
+      <!-- ── FEATURED: Leporem ──────────────────────────────── -->
+      <article class="proj proj--featured fade-in" data-category="brand">
+        <div class="proj__image">
+          <img src="메인 이미지/1 - Leporem-100.jpg" alt="Leporem" class="proj__img" />
+          <a href="project.html" class="proj__view-pill">View Project ↗</a>
+        </div>
+        <div class="proj__info">
+          <span class="proj__index">01</span>
+          <h3 class="proj__title proj__title--lg">Leporem</h3>
+          <div class="proj__meta">Branding · Visual Identity · 2024</div>
+          <p class="proj__desc">시각장애인을 위한 향수 브랜드. 점자와 촉각 언어를 브랜드 정체성으로 전환했습니다.</p>
+        </div>
+      </article>
+
+      <!-- ── BRANDING GROUP ──────────────────────────────────── -->
+      <div class="work__group fade-in">
+        <div class="work__group-label">
+          <span>Branding &amp; Visual Identity</span>
+          <div class="work__group-line"></div>
+        </div>
+
+        <div class="proj-row proj-row--2">
+          <!-- 02 늘푸른 -->
+          <article class="proj" data-category="brand">
+            <div class="proj__image">
+              <img src="메인 이미지/6 - 늘푸른-100.jpg" alt="늘푸른" class="proj__img" />
+              <a href="project.html" class="proj__view-pill">View ↗</a>
+            </div>
+            <div class="proj__info">
+              <span class="proj__index">02</span>
+              <h3 class="proj__title">늘푸른</h3>
+              <div class="proj__meta">Branding · 2023</div>
+              <p class="proj__desc">은퇴 노인을 위한 공간 브랜드. 따뜻하고 안정적인 정체성을 설계했습니다.</p>
+            </div>
+          </article>
+
+          <!-- 03 한결 -->
+          <article class="proj" data-category="identity">
+            <div class="proj__image">
+              <img src="메인 이미지/8 - 한결-100.jpg" alt="한결" class="proj__img" />
+              <a href="project.html" class="proj__view-pill">View ↗</a>
+            </div>
+            <div class="proj__info">
+              <span class="proj__index">03</span>
+              <h3 class="proj__title">한결</h3>
+              <div class="proj__meta">Visual Identity · 2023</div>
+              <p class="proj__desc">노인 미술치료 프로그램의 브랜드 아이덴티티. 일관성과 온기를 시각 언어로 풀었습니다.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="proj-row proj-row--3">
+          <!-- 04 라온 -->
+          <article class="proj" data-category="brand">
+            <div class="proj__image">
+              <img src="메인 이미지/9 - 라온-100.jpg" alt="라온" class="proj__img" />
+              <a href="project.html" class="proj__view-pill">View ↗</a>
+            </div>
+            <div class="proj__info">
+              <span class="proj__index">04</span>
+              <h3 class="proj__title">라온</h3>
+              <div class="proj__meta">Branding · 2023</div>
+              <p class="proj__desc">10대 경계선 장애 청소년 지원 브랜드.</p>
+            </div>
+          </article>
+
+          <!-- 05 유니즌 -->
+          <article class="proj" data-category="identity">
+            <div class="proj__image">
+              <img src="메인 이미지/7 - Unison-100.jpg" alt="유니즌" class="proj__img" />
+              <a href="project.html" class="proj__view-pill">View ↗</a>
+            </div>
+            <div class="proj__info">
+              <span class="proj__index">05</span>
+              <h3 class="proj__title">유니즌</h3>
+              <div class="proj__meta">Visual Identity · 2023</div>
+              <p class="proj__desc">다문화 10대를 위한 커뮤니티 브랜드.</p>
+            </div>
+          </article>
+
+          <!-- 06 Yellow House -->
+          <article class="proj" data-category="brand">
+            <div class="proj__image">
+              <img src="메인 이미지/5 - Yellow House-100.jpg" alt="Yellow House" class="proj__img" />
+              <a href="project.html" class="proj__view-pill">View ↗</a>
+            </div>
+            <div class="proj__info">
+              <span class="proj__index">06</span>
+              <h3 class="proj__title">Yellow House</h3>
+              <div class="proj__meta">Branding · 2023</div>
+              <p class="proj__desc">로컬 카페의 브랜드 아이덴티티 및 공간 그래픽.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- ── BRANDING GROUP 2 ────────────────────────────────── -->
+      <div class="work__group fade-in">
+        <div class="work__group-label">
+          <span>Graphic &amp; Communication</span>
+          <div class="work__group-line"></div>
+        </div>
+
+        <div class="proj-row proj-row--asym">
+          <!-- 07 For Care -->
+          <article class="proj" data-category="brand">
+            <div class="proj__image">
+              <img src="프로젝트6 - For Care (청각장애인 의료)/목업 이미지/스테이셔너리-목업.jpg" alt="For Care" class="proj__img proj__img--tall" />
+              <a href="project.html" class="proj__view-pill">View ↗</a>
+            </div>
+            <div class="proj__info">
+              <span class="proj__index">07</span>
+              <h3 class="proj__title">For Care</h3>
+              <div class="proj__meta">Branding · 2024</div>
+              <p class="proj__desc">청각장애인 의료 서비스 브랜드. 접근성과 신뢰를 시각화했습니다.</p>
+            </div>
+          </article>
+
+          <!-- 08 + 09 stacked -->
+          <div class="proj-col--sm">
+            <article class="proj" data-category="brand">
+              <div class="proj__image">
+                <img src="프로젝트8 - Vogrodi (패션경매)/목업 이미지/스테이셔너리-목업.jpg" alt="Vogrodi" class="proj__img" />
+                <a href="project.html" class="proj__view-pill">View ↗</a>
+              </div>
+              <div class="proj__info">
+                <span class="proj__index">08</span>
+                <h3 class="proj__title">Vogrodi</h3>
+                <div class="proj__meta">Branding · 2024</div>
+                <p class="proj__desc">패션 경매 플랫폼 브랜드 아이덴티티.</p>
+              </div>
+            </article>
+
+            <article class="proj" data-category="brand">
+              <div class="proj__image">
+                <img src="프로젝트9 - 청정익선 (청정한 익선동)/목업 이미지/Project111111111.png" alt="청정익선" class="proj__img" />
+                <a href="project.html" class="proj__view-pill">View ↗</a>
+              </div>
+              <div class="proj__info">
+                <span class="proj__index">09</span>
+                <h3 class="proj__title">청정익선</h3>
+                <div class="proj__meta">Branding · 2023</div>
+                <p class="proj__desc">익선동 로컬 브랜드 캠페인 및 그래픽 시스템.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="proj-row proj-row--2">
+          <!-- 10 Pacemaker -->
+          <article class="proj" data-category="brand">
+            <div class="proj__image">
+              <img src="프로젝트10 - Pacemaker (청년 취업)/목업 이미지/스테이셔너리.jpg" alt="Pacemaker" class="proj__img" />
+              <a href="project.html" class="proj__view-pill">View ↗</a>
+            </div>
+            <div class="proj__info">
+              <span class="proj__index">10</span>
+              <h3 class="proj__title">Pacemaker</h3>
+              <div class="proj__meta">Branding · 2024</div>
+              <p class="proj__desc">청년 취업 지원 서비스 브랜드 아이덴티티.</p>
+            </div>
+          </article>
+
+          <!-- 11 라온 웹 -->
+          <article class="proj" data-category="ui">
+            <div class="proj__image">
+              <img src="프로젝트3 - 라온 (10대 경계선장애)/목업 이미지/라온-웹.jpg" alt="라온 Web" class="proj__img" />
+              <a href="project.html" class="proj__view-pill">View ↗</a>
+            </div>
+            <div class="proj__info">
+              <span class="proj__index">11</span>
+              <h3 class="proj__title">라온 — Web</h3>
+              <div class="proj__meta">UI / Web Design · 2023</div>
+              <p class="proj__desc">라온 브랜드의 웹 인터페이스 디자인.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+    </div><!-- /container -->
+  </section>
+
+  <!-- ============================
+       AWARDS
+  ============================= -->
+  <section class="awards section section--alt" id="awards">
+    <div class="container">
+      <div class="section__header fade-in">
+        <p class="section__label">Recognition</p>
+        <h2 class="section__title">Awards &amp; <em>Honours</em></h2>
+      </div>
+
+      <div class="awards__list">
+        <!--
+          ✏️ REPLACE: Add real award entries in this format:
+          Year / 수상명 / 주최기관 / 수상결과
+          Add or duplicate <div class="award-item"> blocks as needed.
+        -->
+        <div class="award-item fade-in">
+          <div class="award-item__year">—</div>
+          <div class="award-item__body">
+            <h3 class="award-item__title">Award Name — To Be Added</h3>
+            <p class="award-item__org">Organisation · Category</p>
+          </div>
+          <div class="award-item__badge">🏆</div>
+        </div>
+
+        <div class="award-item fade-in">
+          <div class="award-item__year">—</div>
+          <div class="award-item__body">
+            <h3 class="award-item__title">Award Name — To Be Added</h3>
+            <p class="award-item__org">Organisation · Category</p>
+          </div>
+          <div class="award-item__badge">🥇</div>
+        </div>
+
+        <div class="award-item fade-in">
+          <div class="award-item__year">—</div>
+          <div class="award-item__body">
+            <h3 class="award-item__title">Award Name — To Be Added</h3>
+            <p class="award-item__org">Organisation · Category</p>
+          </div>
+          <div class="award-item__badge">✦</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       CONTACT
+  ============================= -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="contact__inner fade-in">
+        <p class="section__label">Let's Talk</p>
+        <h2 class="contact__title">
+          Let's build a brand<br />with clarity and <em>presence.</em>
+        </h2>
+        <p class="contact__sub">
+          프로젝트 및 협업 문의는 이메일로 연락 부탁드립니다.
+        </p>
+        <a href="mailto:wkdgnsals12@gmail.com" class="contact__email">
+          wkdgnsals12@gmail.com
+        </a>
+
+        <!-- ✏️ REPLACE: add real URLs for each platform -->
+        <div class="contact__socials">
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Behance</a>
+          <a href="#" class="social-link">Notion</a>
+          <a href="#" class="social-link">GitHub</a>
+          <!-- ✏️ REPLACE href with actual PDF link or file path -->
+          <a href="#" class="social-link social-link--pdf">Portfolio PDF ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2026 Jang Hoon Min. All rights reserved.</p>
+        <p class="footer__made">Designed &amp; built with care.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
