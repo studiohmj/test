@@ -11,6 +11,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
   <style>
     /* ---------- Profile page specific ---------- */
+
+    .profile-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .profile-breadcrumb__back {
+      color: var(--t2);
+      transition: color var(--dur) ease;
+      position: relative;
+    }
+    .profile-breadcrumb__back::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 100%; height: 1px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform var(--dur) ease;
+    }
+    .profile-breadcrumb__back:hover { color: var(--t1); }
+    .profile-breadcrumb__back:hover::after { transform: scaleX(1); transform-origin: left; }
+
+    .profile-breadcrumb__sep { color: var(--t3); }
+    .profile-breadcrumb__cur { color: var(--primary); }
+
     .profile-page {
       padding-top: calc(var(--nav-h) + 5rem);
       padding-bottom: 8rem;
@@ -208,6 +241,7 @@
     <a href="index.html" class="nav__logo">Jang Hoon Min</a>
     <ul class="nav__links">
       <li><a href="index.html#about">About</a></li>
+      <li><a href="profile.html" class="active-link">Profile</a></li>
       <li><a href="index.html#work">Work</a></li>
       <li><a href="index.html#awards">Awards</a></li>
       <li><a href="index.html#contact">Contact</a></li>
@@ -223,7 +257,8 @@
   <div class="mobile-menu" id="mobileMenu">
     <ul>
       <li><a href="index.html#about" class="mobile-link">About</a></li>
-      <li><a href="index.html#work" class="mobile-link">Work</a></li>
+      <li><a href="profile.html"     class="mobile-link">Profile</a></li>
+      <li><a href="index.html#work"  class="mobile-link">Work</a></li>
       <li><a href="index.html#awards" class="mobile-link">Awards</a></li>
       <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
     </ul>
@@ -231,6 +266,13 @@
 
   <main class="profile-page">
     <div class="container">
+
+      <!-- Back + Breadcrumb -->
+      <div class="profile-breadcrumb">
+        <a href="index.html" class="profile-breadcrumb__back">← Back to Portfolio</a>
+        <span class="profile-breadcrumb__sep">·</span>
+        <span class="profile-breadcrumb__cur">Profile</span>
+      </div>
 
       <!-- Hero: Poster + Info -->
       <div class="profile-hero">
@@ -265,27 +307,25 @@
         </div>
       </div>
 
-      <!-- Timeline -->
+      <!-- Education (학력) -->
       <div class="profile-block">
-        <span class="profile-block__title">Experience &amp; Education</span>
+        <span class="profile-block__title">Education</span>
         <ul class="profile-timeline">
           <li class="profile-timeline__item">
-            <span class="profile-timeline__date">2014 – 2017</span>
-            <span class="profile-timeline__content">의정부고등학교 졸업</span>
-          </li>
-          <li class="profile-timeline__item">
-            <span class="profile-timeline__date">2017 – 2019</span>
+            <span class="profile-timeline__date">2014.02 – 2017.02</span>
             <span class="profile-timeline__content">
-              예원예술대학교 시각디자인학과 수료
-              <span class="profile-timeline__sub">학과대표</span>
+              의정부고등학교 졸업
             </span>
           </li>
           <li class="profile-timeline__item">
-            <span class="profile-timeline__date">2019 – 2021</span>
-            <span class="profile-timeline__content">공군 병장 만기 전역</span>
+            <span class="profile-timeline__date">2017.03 – 2019.02</span>
+            <span class="profile-timeline__content">
+              예원예술대학교 시각디자인학과 수료
+              <span class="profile-timeline__sub">수료 후 편입 · 학과대표</span>
+            </span>
           </li>
           <li class="profile-timeline__item">
-            <span class="profile-timeline__date">2019 – 2024</span>
+            <span class="profile-timeline__date">2019.03 – 2024.02</span>
             <span class="profile-timeline__content">
               신한대학교 산업디자인학과 졸업
               <span class="profile-timeline__sub">제3대 총학생회 사무국 국장 (2022–2023)</span>
@@ -293,10 +333,51 @@
             </span>
           </li>
           <li class="profile-timeline__item">
-            <span class="profile-timeline__date">2025 –</span>
+            <span class="profile-timeline__date">2025.03 –</span>
             <span class="profile-timeline__content">
-              성균관대학교 일반대학원 커뮤니케이션디자인학과 재학
-              <span class="profile-timeline__sub">학부대학 TA 조교</span>
+              성균관대학교 일반대학원 커뮤니케이션디자인학과
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Career Experience (경력) -->
+      <div class="profile-block">
+        <span class="profile-block__title">Career &amp; Experience</span>
+        <ul class="profile-timeline">
+          <li class="profile-timeline__item">
+            <span class="profile-timeline__date">2025.03 – 2025.07</span>
+            <span class="profile-timeline__content">
+              성균관대학교 학부대학 TA 조교
+              <span class="profile-timeline__sub">교육자료 제작 및 수업보조</span>
+            </span>
+          </li>
+          <li class="profile-timeline__item">
+            <span class="profile-timeline__date">2025.01 – 03</span>
+            <span class="profile-timeline__content">
+              제로스토어 사원
+              <span class="profile-timeline__sub">디자인 및 현장 출장 업무</span>
+            </span>
+          </li>
+          <li class="profile-timeline__item">
+            <span class="profile-timeline__date">2025.07 – 09</span>
+            <span class="profile-timeline__content">
+              제로스토어 사원
+              <span class="profile-timeline__sub">디자인 및 현장 출장 업무</span>
+            </span>
+          </li>
+          <li class="profile-timeline__item">
+            <span class="profile-timeline__date">2025.09 – 12</span>
+            <span class="profile-timeline__content">
+              세그루 패션 디자인 고등학교 강사
+              <span class="profile-timeline__sub">GTQ-I 자격증반 수업</span>
+            </span>
+          </li>
+          <li class="profile-timeline__item">
+            <span class="profile-timeline__date">2025.12 – 2026.02</span>
+            <span class="profile-timeline__content">
+              제로스토어 사원
+              <span class="profile-timeline__sub">디자인 및 현장 출장 업무</span>
             </span>
           </li>
         </ul>
@@ -309,14 +390,29 @@
             <span class="profile-block__title">Certifications</span>
             <ul class="profile-list">
               <li class="profile-list__item">
-                <span class="profile-list__name">GTQ Master</span>
-                <span class="profile-list__sub">GTQ Photoshop 1급 · GTQ Illustrator 1급 · GTQ InDesign 1급</span>
-              </li>
-              <li class="profile-list__item">
-                <span class="profile-list__name">컴퓨터그래픽스 운용기능사</span>
-              </li>
-              <li class="profile-list__item">
+                <span class="profile-list__date">2019.10</span>
                 <span class="profile-list__name">운전면허 2종 보통</span>
+                <span class="profile-list__sub">경찰청 (운전면허시험관리단)</span>
+              </li>
+              <li class="profile-list__item">
+                <span class="profile-list__date">2024.06</span>
+                <span class="profile-list__name">GTQ 포토샵 1급</span>
+                <span class="profile-list__sub">한국생산성본부 (KPC)</span>
+              </li>
+              <li class="profile-list__item">
+                <span class="profile-list__date">2024.08</span>
+                <span class="profile-list__name">GTQ 일러스트 1급</span>
+                <span class="profile-list__sub">한국생산성본부 (KPC)</span>
+              </li>
+              <li class="profile-list__item">
+                <span class="profile-list__date">2024.10</span>
+                <span class="profile-list__name">GTQ 인디자인 1급</span>
+                <span class="profile-list__sub">한국생산성본부 (KPC)</span>
+              </li>
+              <li class="profile-list__item">
+                <span class="profile-list__date">2024.10</span>
+                <span class="profile-list__name">컴퓨터그래픽스 운용기능사</span>
+                <span class="profile-list__sub">한국산업인력공단</span>
               </li>
             </ul>
           </div>
@@ -325,23 +421,27 @@
             <span class="profile-block__title">Awards</span>
             <ul class="profile-list">
               <li class="profile-list__item">
-                <span class="profile-list__date">2023.11.21</span>
-                <span class="profile-list__name">청년 디자인 멘토 공로상</span>
+                <span class="profile-list__date">2023.11</span>
+                <span class="profile-list__name">2023 청년디자인 멘토단 공로상</span>
+                <span class="profile-list__sub">의정부시 중장년 기술창업지원센터</span>
               </li>
               <li class="profile-list__item">
-                <span class="profile-list__date">2023.12.31</span>
-                <span class="profile-list__name">청년 디자인 콘텐츠 지원단 공로상</span>
+                <span class="profile-list__date">2023.12</span>
+                <span class="profile-list__name">2023 청년.디자인 콘텐츠 지원단 공로상</span>
+                <span class="profile-list__sub">의정부시 1인 창조기업 지원센터</span>
               </li>
               <li class="profile-list__item">
-                <span class="profile-list__date">2024.02.15</span>
+                <span class="profile-list__date">2024.02</span>
                 <span class="profile-list__name">신한대학교 모범 졸업생 표창</span>
+                <span class="profile-list__sub">신한대학교</span>
               </li>
               <li class="profile-list__item">
-                <span class="profile-list__date">2025.06.25</span>
+                <span class="profile-list__date">2025.06</span>
                 <span class="profile-list__name">GCDFE 글로벌 미래 교육 디자인 대회 우수상</span>
+                <span class="profile-list__sub">성균관대학교</span>
               </li>
               <li class="profile-list__item">
-                <span class="profile-list__date">2026.02.06</span>
+                <span class="profile-list__date">2026.02</span>
                 <span class="profile-list__name">국제창의예술디자인대전 금상</span>
               </li>
             </ul>

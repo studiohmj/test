@@ -57,20 +57,23 @@
   font-size: 0.68rem;
 }
 
+/* H1 — project title */
 .proj-hero__title {
-  font-size: clamp(2.5rem, 7vw, 6rem);
+  font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 1.0;
   margin-bottom: 2rem;
 }
 
+/* Body */
 .proj-hero__tagline {
-  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  font-size: 1rem;
   color: var(--t2);
   max-width: 560px;
-  line-height: 1.75;
+  line-height: 1.85;
   margin-bottom: 3rem;
+  font-weight: 400;
 }
 
 .proj-hero__info {
@@ -195,11 +198,13 @@
   max-width: 680px;
 }
 
+/* Body — 16px */
 .proj-body {
-  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  font-size: 1rem;
+  font-weight: 400;
   color: var(--t2);
   line-height: 1.85;
-  margin-bottom: 1rem;
+  margin-bottom: 1.1rem;
 }
 .proj-body:last-child { margin-bottom: 0; }
 
@@ -289,6 +294,75 @@
   transition: color var(--dur) ease;
 }
 .footer__back-link:hover { color: var(--primary); }
+
+/* --------------------------------------------------------------------------
+   IMAGE SECTION — process / mockup wrappers (shared across all project pages)
+   -------------------------------------------------------------------------- */
+.img-section {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.img-section__label {
+  padding: 1.25rem var(--pad);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.img-section__label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Side-by-side process images (Images 2 + 3) */
+.img-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.img-pair__item {
+  overflow: hidden;
+  background: var(--surface);
+  aspect-ratio: 4 / 3;
+  position: relative;
+}
+.img-pair__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.img-pair__item:hover img { transform: scale(1.04); }
+.img-pair__caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+  padding: 1.5rem 1.25rem 0.9rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.img-pair__item:hover .img-pair__caption { opacity: 1; }
+
+@media (max-width: 600px) {
+  .img-pair { grid-template-columns: 1fr; }
+  .img-pair__item { aspect-ratio: 3 / 2; }
+}
 
 /* --------------------------------------------------------------------------
    RESPONSIVE

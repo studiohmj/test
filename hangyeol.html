@@ -10,6 +10,157 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    /* --- Color Palette Swatches --- */
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(0.6rem, 1.2vw, 1rem);
+      margin-top: 1rem;
+    }
+    .swatch {
+      aspect-ratio: 1 / 1.15;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+    .swatch--bordered { border: 1px solid var(--border-mid); }
+    .swatch__role {
+      font-size: 0.52rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.65;
+    }
+    .swatch__bottom { display: flex; flex-direction: column; gap: 0.1rem; }
+    .swatch__name { font-size: 0.7rem; font-weight: 600; opacity: 0.9; }
+    .swatch__hex {
+      font-size: 0.6rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      opacity: 0.55;
+      letter-spacing: 0.04em;
+    }
+    .swatch--dark  { color: #ffffff; }
+    .swatch--light { color: #111827; }
+
+    /* --- Brand Values List --- */
+    .brand-values {
+      border-top: 1px solid var(--border);
+      margin-top: 1.75rem;
+    }
+    .brand-value {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 1.25rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+    }
+    .brand-value__num {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      font-feature-settings: 'tnum';
+    }
+    .brand-value__text {
+      font-size: 0.86rem;
+      font-weight: 500;
+      color: var(--t1);
+      line-height: 1.5;
+    }
+    .brand-value__sub {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 400;
+      color: var(--t2);
+      margin-top: 0.1rem;
+    }
+
+    /* --- Image Section Wrapper --- */
+    .img-section {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .img-section__label {
+      padding: 1.5rem var(--pad);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .img-section__label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* --- Supporting Images (2-up) --- */
+    .img-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .img-pair__item {
+      overflow: hidden;
+      background: var(--surface);
+      aspect-ratio: 4 / 3;
+      position: relative;
+    }
+    .img-pair__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.55s ease;
+    }
+    .img-pair__item:hover img { transform: scale(1.04); }
+
+    /* Caption inside image */
+    .img-pair__caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%);
+      padding: 1.5rem 1.25rem 0.9rem;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .img-pair__item:hover .img-pair__caption { opacity: 1; }
+
+    /* --- Mockup Section (Image 4) --- */
+    .mockup-section {
+      background: var(--bg-alt);
+    }
+    .mockup-section .proj-img__el {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .palette { grid-template-columns: 1fr 1fr; }
+      .swatch { aspect-ratio: 1; }
+      .img-pair { grid-template-columns: 1fr; }
+      .img-pair__item { aspect-ratio: 3 / 2; }
+    }
+  </style>
 </head>
 <body>
   <div class="glow" aria-hidden="true"></div>
@@ -33,6 +184,7 @@
     </ul>
   </div>
 
+  <!-- ① PROJECT HERO -->
   <header class="proj-hero">
     <div class="container">
       <div class="proj-hero__inner">
@@ -54,10 +206,12 @@
     </div>
   </header>
 
-  <div class="proj-img proj-img--full fade-in">
-    <img src="메인 이미지/7. 한결/한결 (1).jpg" alt="한결 cover" class="proj-img__el" />
+  <!-- ② MAIN VISUAL — Image 1 -->
+  <div class="proj-img proj-img--full">
+    <img src="메인 이미지/7. 한결/한결 (1).jpg" alt="한결 — main visual" class="proj-img__el" />
   </div>
 
+  <!-- ③ OVERVIEW -->
   <section class="proj-section">
     <div class="container">
       <div class="proj-text proj-text--wide fade-in">
@@ -68,28 +222,119 @@
     </div>
   </section>
 
+  <!-- ④ CONCEPT + BRAND VALUES -->
   <section class="proj-section">
     <div class="container">
       <div class="proj-split fade-in">
-        <div class="proj-split__label"><p class="proj-overline">Concept</p></div>
+        <div class="proj-split__label">
+          <p class="proj-overline">Concept</p>
+        </div>
         <div class="proj-split__body">
           <p class="proj-body">'한결같다' — 변함없이 지속된다는 뜻에서 출발해 안정과 신뢰를 상징화했다. 로고의 물결 모양은 치유의 흐름을 표현하고, 붓글씨 스타일의 로고타입이 온기를 더한다.</p>
+
+          <div class="brand-values">
+            <div class="brand-value">
+              <span class="brand-value__num">01</span>
+              <span class="brand-value__text">
+                사회적 교류
+                <span class="brand-value__sub">미술치료를 통해 노인이 타인과 연결되는 경험</span>
+              </span>
+            </div>
+            <div class="brand-value">
+              <span class="brand-value__num">02</span>
+              <span class="brand-value__text">
+                자기표현
+                <span class="brand-value__sub">감정을 형태와 색으로 드러낼 수 있는 공간</span>
+              </span>
+            </div>
+            <div class="brand-value">
+              <span class="brand-value__num">03</span>
+              <span class="brand-value__text">
+                정서적 안정
+                <span class="brand-value__sub">변함없는 브랜드 경험이 주는 심리적 안전감</span>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ⑤ PROCESS IMAGES — Images 2 + 3 -->
+  <div class="img-section fade-in">
+    <div class="img-section__label">Identity System</div>
+    <div class="proj-img proj-img--full" style="border:none;">
+      <img src="메인 이미지/7. 한결/한결 (2).jpg" alt="한결 — identity system" class="proj-img__el" />
+    </div>
+  </div>
+
+  <div class="img-section fade-in">
+    <div class="img-section__label">Brand Collateral</div>
+    <div class="proj-img proj-img--full" style="border:none;">
+      <img src="메인 이미지/7. 한결/한결 (3).jpg" alt="한결 — brand collateral" class="proj-img__el" />
+    </div>
+  </div>
+
+  <!-- ⑥ COLOR SYSTEM + IDENTITY -->
   <section class="proj-section">
     <div class="container">
       <div class="proj-split fade-in">
-        <div class="proj-split__label"><p class="proj-overline">Identity</p></div>
+        <div class="proj-split__label">
+          <p class="proj-overline">Color System</p>
+        </div>
         <div class="proj-split__body">
-          <p class="proj-body">Dark Sky Blue(#0086C9)를 중심으로 크림(#FFF5E0)과 네이비(#00489D)를 조합해 따뜻하면서도 안정적인 이미지를 완성했다. 버스 정류장 포스터, 달력, 사인물, 명함까지 일관된 시스템이 브랜드 전반을 관통한다.</p>
+          <p class="proj-body">따뜻함과 신뢰를 동시에 전달하는 세 가지 색으로 팔레트를 구성했다. 하늘색의 개방감, 크림의 부드러움, 네이비의 안정감이 브랜드 전체에 흐른다.</p>
+
+          <div class="palette">
+            <div class="swatch swatch--dark" style="background:#0086C9;">
+              <span class="swatch__role">Primary</span>
+              <div class="swatch__bottom">
+                <span class="swatch__name">Dark Sky Blue</span>
+                <span class="swatch__hex">#0086C9</span>
+              </div>
+            </div>
+            <div class="swatch swatch--light swatch--bordered" style="background:#FFF5E0;">
+              <span class="swatch__role">Background</span>
+              <div class="swatch__bottom">
+                <span class="swatch__name">Cream</span>
+                <span class="swatch__hex">#FFF5E0</span>
+              </div>
+            </div>
+            <div class="swatch swatch--dark" style="background:#00489D;">
+              <span class="swatch__role">Secondary</span>
+              <div class="swatch__bottom">
+                <span class="swatch__name">Deep Navy</span>
+                <span class="swatch__hex">#00489D</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <section class="proj-section" style="padding-top:0; border-top:none;">
+    <div class="container">
+      <div class="proj-split fade-in">
+        <div class="proj-split__label">
+          <p class="proj-overline">Identity System</p>
+        </div>
+        <div class="proj-split__body">
+          <p class="proj-body">버스 정류장 포스터, 달력, 사인물, 명함까지 일관된 시스템이 브랜드 전반을 관통한다. 어디서 마주치더라도 한결같은 온기가 느껴지도록 모든 터치포인트에 같은 원칙을 적용했다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⑦ MOCKUP COLLECTION — Image 4 -->
+  <div class="img-section mockup-section fade-in">
+    <div class="img-section__label">Mockup Collection</div>
+    <div class="proj-img proj-img--full" style="border-top:none;">
+      <img src="메인 이미지/7. 한결/한결 (4).jpg" alt="한결 — mockup collection" class="proj-img__el" />
+    </div>
+  </div>
+
+  <!-- ⑧ PROJECT CLOSE / CREDITS -->
   <section class="proj-section proj-section--close">
     <div class="container">
       <div class="proj-close fade-in">
@@ -117,6 +362,7 @@
       </div>
     </div>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
