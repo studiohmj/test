@@ -61,20 +61,20 @@
 
       <div class="hero__bottom line">
         <div class="hero__identity">
+          <p class="hero__name-kr">장훈민</p>
           <p class="hero__name-sub">Jang Hoon Min</p>
+        </div>
+        <div class="hero__role-block">
           <p class="hero__role-sub">Branding Designer</p>
-          <p class="hero__desc-kr">브랜드가 기억되는 방식을 설계합니다.</p>
+          <button class="hero__profile-link profile-drawer-trigger">View Profile ↗</button>
         </div>
         <div class="hero__cta">
           <a href="#work" class="btn btn--primary">View Work</a>
-          <button class="btn btn--ghost profile-drawer-trigger">View Profile</button>
           <a href="#contact" class="btn btn--ghost">Contact</a>
         </div>
       </div>
 
     </div>
-
-    <div class="hero__scroll" aria-hidden="true">Scroll</div>
   </section>
 
   <!-- MARQUEE -->
@@ -101,21 +101,28 @@
   <section class="about section" id="about">
     <div class="container">
 
-      <!-- ① Full-width statement -->
-      <div class="about__intro fade-in">
-        <p class="section__label">About</p>
-        <h2 class="about__statement">
-          I design brands<br />
-          that people <em>actually remember.</em>
-        </h2>
+      <!-- ① Header with toggle -->
+      <div class="section__header fade-in">
+        <div class="section-toggle__top">
+          <p class="section__label">About</p>
+          <h2 class="about__statement">
+            I design brands<br />
+            that people <em>actually remember.</em>
+          </h2>
+        </div>
+        <button class="section-toggle__btn" id="aboutToggle" aria-expanded="false" aria-controls="aboutContent">
+          <span class="section-toggle__label">Show</span>
+          <span class="section-toggle__icon">▼</span>
+        </button>
       </div>
 
+      <div class="section-toggle__body" id="aboutContent" style="display:none">
       <!-- ② Photo col + Approach col -->
       <div class="about__main">
 
         <div class="about__photo-col fade-in">
-          <img src="메인 이미지/메인 포스터 이미지/1.png" alt="Designing What Remains — Jang Hoon Min" class="about__photo" />
-          <p class="about__photo-note">Profile photo — coming soon</p>
+          <img src="메인 이미지/메인 포스터 이미지/1.png" alt="Jang Hoon Min" class="about__photo" />
+          <p class="about__photo-note">Poster — 2024</p>
 
           <!-- Quiet identity facts below photo -->
           <dl class="about__facts">
@@ -183,40 +190,12 @@
         </div>
 
       </div><!-- /about__main -->
+      </div><!-- /aboutContent -->
 
-      <!-- Profile CTA -->
-      <div class="about__profile-cta fade-in">
-        <button class="btn btn--ghost profile-drawer-trigger">View Full Profile →</button>
-        <a href="profile.html" class="about__profile-page-link">Full page ↗</a>
-      </div>
 
     </div>
   </section>
 
-  <!-- STATS -->
-  <div class="stats section--sm">
-    <div class="container">
-      <div class="stats__grid">
-        <div class="stat fade-in">
-          <strong class="stat__number" data-target="7">0</strong>
-          <span class="stat__label">Years in Design</span>
-        </div>
-        <div class="stat fade-in">
-          <strong class="stat__number" data-target="4">0</strong>
-          <span class="stat__label">Certifications</span>
-        </div>
-        <div class="stat fade-in">
-          <!-- ✏️ REPLACE: update when real award count is confirmed -->
-          <strong class="stat__number" data-target="5">0</strong>
-          <span class="stat__label">Awards</span>
-        </div>
-        <div class="stat fade-in">
-          <strong class="stat__number" data-target="2">0</strong>
-          <span class="stat__label">Degrees</span>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- ============================
        WORK — Editorial Layout
@@ -224,43 +203,36 @@
   <section class="work section" id="work">
     <div class="container">
 
-      <div class="work__header fade-in">
-        <div class="section-toggle__top">
-          <p class="section__label">Selected Work</p>
-          <h2 class="section__title">Projects</h2>
-        </div>
-        <button class="section-toggle__btn" id="workToggle" aria-expanded="true" aria-controls="workContent">
-          <span class="section-toggle__label">Hide</span>
-          <span class="section-toggle__icon">▲</span>
+      <div class="work__intro fade-in">
+        <p class="section__label">Work</p>
+      </div>
+
+      <!-- ── BRANDING DESIGN GROUP ──────────────────────────── -->
+      <div class="work__group-header fade-in">
+        <h2 class="section__title">Branding Design</h2>
+        <button class="section-toggle__btn" id="brandingToggle" aria-expanded="false" aria-controls="brandingContent">
+          <span class="section-toggle__label">Show</span>
+          <span class="section-toggle__icon">▼</span>
         </button>
       </div>
 
-      <div class="section-toggle__body" id="workContent">
+      <div class="section-toggle__body" id="brandingContent" style="display:none">
 
-      <!-- ── FEATURED: Leporem ──────────────────────────────── -->
-      <article class="proj proj--featured fade-in" data-category="brand">
-        <div class="proj__image">
-          <img src="메인 이미지/1. Leporem/르포렘 1p-100.jpg" alt="Leporem" class="proj__img" />
-          <a href="leporem.html" class="proj__view-pill">View Project ↗</a>
-        </div>
-        <div class="proj__info">
-          <span class="proj__index">01</span>
-          <h3 class="proj__title proj__title--lg">Leporem</h3>
-          <div class="proj__meta">Branding Design · 2024</div>
-          <p class="proj__desc">시각장애인을 위한 향수 브랜드. 점자와 촉각 언어를 브랜드 아이덴티티로 전환했습니다.</p>
-        </div>
-      </article>
-
-      <!-- ── GROUP 1: Branding Design ────────────────────────── -->
-      <div class="work__group fade-in">
-        <div class="work__group-label">
-          <span>Branding Design</span>
-          <div class="work__group-line"></div>
-        </div>
+        <!-- Featured: Leporem -->
+        <article class="proj proj--featured fade-in" data-category="brand">
+          <div class="proj__image">
+            <img src="메인 이미지/1. Leporem/르포렘 1p-100.jpg" alt="Leporem" class="proj__img" />
+            <a href="leporem.html" class="proj__view-pill">View Project ↗</a>
+          </div>
+          <div class="proj__info">
+            <h3 class="proj__title proj__title--lg">Leporem</h3>
+            <div class="proj__meta">Branding Design · 2024</div>
+            <p class="proj__desc">시각장애인을 위한 향수 브랜드. 점자와 촉각 언어를 브랜드 아이덴티티로 전환했습니다.</p>
+          </div>
+        </article>
 
         <div class="proj-row proj-row--3">
-          <!-- 청정익선 -->
-          <article class="proj" data-category="brand">
+          <article class="proj fade-in" data-category="brand">
             <div class="proj__image">
               <img src="메인 이미지/2. 청정익선/청정익선 1p-100.jpg" alt="청정익선" class="proj__img" />
               <a href="ikseondong.html" class="proj__view-pill">View ↗</a>
@@ -272,8 +244,7 @@
             </div>
           </article>
 
-          <!-- Vogrodi -->
-          <article class="proj" data-category="brand">
+          <article class="proj fade-in" data-category="brand">
             <div class="proj__image">
               <img src="메인 이미지/3. Vogload/vogload (1).jpg" alt="Vogrodi" class="proj__img" />
               <a href="vogrodi.html" class="proj__view-pill">View ↗</a>
@@ -285,8 +256,7 @@
             </div>
           </article>
 
-          <!-- Pacemaker -->
-          <article class="proj" data-category="brand">
+          <article class="proj fade-in" data-category="brand">
             <div class="proj__image">
               <img src="메인 이미지/4. pacemaker/Pacemaker 1p-100.jpg" alt="Pacemaker" class="proj__img" />
               <a href="pacemaker.html" class="proj__view-pill">View ↗</a>
@@ -300,10 +270,9 @@
         </div>
 
         <div class="proj-row proj-row--2">
-          <!-- Yellow House -->
-          <article class="proj" data-category="brand">
+          <article class="proj fade-in" data-category="brand">
             <div class="proj__image">
-              <img src="메인 이미지/5. yellow house/yellow house (1).jpg" alt="Yellow House" class="proj__img" />
+              <img src="메인 이미지/5. yellow house/yellow house (3).jpg" alt="Yellow House" class="proj__img" />
               <a href="yellowhouse.html" class="proj__view-pill">View ↗</a>
             </div>
             <div class="proj__info">
@@ -313,8 +282,7 @@
             </div>
           </article>
 
-          <!-- For Care -->
-          <article class="proj" data-category="brand">
+          <article class="proj fade-in" data-category="brand">
             <div class="proj__image">
               <img src="메인 이미지/6. for care/Pacemaker 1p 사본-100.jpg" alt="For Care" class="proj__img" />
               <a href="forcare.html" class="proj__view-pill">View ↗</a>
@@ -328,8 +296,7 @@
         </div>
 
         <div class="proj-row proj-row--2">
-          <!-- 한결 -->
-          <article class="proj" data-category="brand">
+          <article class="proj fade-in" data-category="brand">
             <div class="proj__image">
               <img src="메인 이미지/7. 한결/한결 (1).jpg" alt="한결" class="proj__img" />
               <a href="hangyeol.html" class="proj__view-pill">View ↗</a>
@@ -337,12 +304,11 @@
             <div class="proj__info">
               <h3 class="proj__title">한결</h3>
               <div class="proj__meta">Branding Design · 2024</div>
-              <p class="proj__desc">노인 미술치료 프로그램 브랜드. 일관성과 온기를 시각 언어로 풀었습니다.</p>
+              <p class="proj__desc">노인 미술치료 프로그램 브랜드. 일관성과 온기를 시각 언어로 담았습니다.</p>
             </div>
           </article>
 
-          <!-- 늘푸른 -->
-          <article class="proj" data-category="brand">
+          <article class="proj fade-in" data-category="brand">
             <div class="proj__image">
               <img src="메인 이미지/8. 늘푸른/늘푸른 (1).jpg" alt="늘푸른" class="proj__img" />
               <a href="neulpureun.html" class="proj__view-pill">View ↗</a>
@@ -354,20 +320,24 @@
             </div>
           </article>
         </div>
+
+      </div><!-- /brandingContent -->
+
+      <!-- ── UX/UI DESIGN GROUP ──────────────────────────────── -->
+      <div class="work__group-header fade-in">
+        <h2 class="section__title">UX / UI Design</h2>
+        <button class="section-toggle__btn" id="uxuiToggle" aria-expanded="false" aria-controls="uxuiContent">
+          <span class="section-toggle__label">Show</span>
+          <span class="section-toggle__icon">▼</span>
+        </button>
       </div>
 
-      <!-- ── GROUP 2: UX/UI Design ────────────────────────────── -->
-      <div class="work__group fade-in">
-        <div class="work__group-label">
-          <span>UX/UI Design</span>
-          <div class="work__group-line"></div>
-        </div>
+      <div class="section-toggle__body" id="uxuiContent" style="display:none">
 
         <div class="proj-row proj-row--2">
-          <!-- Edustay -->
-          <article class="proj" data-category="uxui">
+          <article class="proj fade-in" data-category="uxui">
             <div class="proj__image">
-              <div class="proj__img-ph">Edustay</div>
+              <div class="proj__img-ph" style="background:linear-gradient(135deg,#1A6BFF 0%,#0F4DBF 100%);color:white;font-size:1.1rem;font-weight:800;">Edustay</div>
               <a href="edustay.html" class="proj__view-pill">View ↗</a>
             </div>
             <div class="proj__info">
@@ -377,25 +347,23 @@
             </div>
           </article>
 
-          <!-- 이화공부방 -->
-          <article class="proj" data-category="uxui">
+          <article class="proj fade-in" data-category="uxui">
             <div class="proj__image">
-              <div class="proj__img-ph">이화공부방</div>
+              <div class="proj__img-ph" style="background:linear-gradient(135deg,#1A6BFF 0%,#EBF2FF 100%);color:#1255D4;font-size:1.1rem;font-weight:800;">이화공부방</div>
               <a href="ihwa.html" class="proj__view-pill">View ↗</a>
             </div>
             <div class="proj__info">
               <h3 class="proj__title">이화공부방</h3>
-              <div class="proj__meta">UX/UI Design · 2024</div>
-              <p class="proj__desc">학습 커뮤니티를 위한 앱 인터페이스 디자인.</p>
+              <div class="proj__meta">Web Design · 2025</div>
+              <p class="proj__desc">초등 학습 전문 공부방 랜딩 페이지 디자인.</p>
             </div>
           </article>
         </div>
 
         <div class="proj-row proj-row--2">
-          <!-- 눈치코치 -->
-          <article class="proj" data-category="uxui">
+          <article class="proj fade-in" data-category="uxui">
             <div class="proj__image">
-              <div class="proj__img-ph">눈치코치</div>
+              <div class="proj__img-ph" style="background:linear-gradient(135deg,#FF5500 0%,#FF7733 100%);color:white;font-size:1.1rem;font-weight:800;">눈치코치</div>
               <a href="nunchi.html" class="proj__view-pill">View ↗</a>
             </div>
             <div class="proj__info">
@@ -405,10 +373,9 @@
             </div>
           </article>
 
-          <!-- 포트폴리오 웹디자인 -->
-          <article class="proj" data-category="uxui">
+          <article class="proj fade-in" data-category="uxui">
             <div class="proj__image">
-              <div class="proj__img-ph">Portfolio Web</div>
+              <div class="proj__img-ph" style="background:linear-gradient(135deg,#111 0%,#2d2d2d 100%);color:white;font-size:1rem;font-weight:800;letter-spacing:0.05em;">Portfolio Web</div>
               <a href="portfolio-web.html" class="proj__view-pill">View ↗</a>
             </div>
             <div class="proj__info">
@@ -418,9 +385,9 @@
             </div>
           </article>
         </div>
-      </div>
 
-      </div><!-- /section-toggle__body -->
+      </div><!-- /uxuiContent -->
+
     </div><!-- /container -->
   </section>
 
@@ -432,21 +399,21 @@
       <div class="section__header fade-in">
         <div class="section-toggle__top">
           <p class="section__label">Recognition</p>
-          <h2 class="section__title">Awards &amp; <em>Honours</em></h2>
+          <h2 class="section__title">Awards</h2>
         </div>
-        <button class="section-toggle__btn" id="awardsToggle" aria-expanded="true" aria-controls="awardsContent">
-          <span class="section-toggle__label">Hide</span>
-          <span class="section-toggle__icon">▲</span>
+        <button class="section-toggle__btn" id="awardsToggle" aria-expanded="false" aria-controls="awardsContent">
+          <span class="section-toggle__label">Show</span>
+          <span class="section-toggle__icon">▼</span>
         </button>
       </div>
 
-      <div class="section-toggle__body" id="awardsContent">
+      <div class="section-toggle__body" id="awardsContent" style="display:none">
       <div class="awards__list">
         <div class="award-item fade-in">
           <div class="award-item__year">2026</div>
           <div class="award-item__body">
             <h3 class="award-item__title">국제창의예술디자인대전 금상</h3>
-            <p class="award-item__org">국제창의예술디자인대전 · 2026.02.06</p>
+            <p class="award-item__org">창의인성교육문화협회 · 2026.02.06</p>
           </div>
           <div class="award-item__badge">🥇</div>
         </div>
@@ -546,16 +513,11 @@
 
       <!-- Hero -->
       <div class="drawer-hero">
-        <img src="메인 이미지/메인 포스터 이미지/1.png" alt="Jang Hoon Min" class="drawer-hero__img" />
-        <div>
+        <img src="프로필.png" alt="장훈민" class="drawer-hero__img" />
+        <div class="drawer-hero__info">
+          <h2 class="drawer-hero__name">장훈민</h2>
+          <p class="drawer-hero__sub">Jang Hoon Min</p>
           <p class="drawer-hero__label">Branding Designer</p>
-          <h2 class="drawer-hero__name">Jang<br/>Hoon Min</h2>
-          <p class="drawer-hero__sub">장훈민</p>
-          <dl class="drawer-facts">
-            <div class="drawer-fact"><dt>Based</dt><dd>Seoul, Korea</dd></div>
-            <div class="drawer-fact"><dt>Study</dt><dd>성균관대학교 대학원</dd></div>
-            <div class="drawer-fact"><dt>Open to</dt><dd>Freelance &amp; Collab</dd></div>
-          </dl>
         </div>
       </div>
 
@@ -571,13 +533,21 @@
             <span class="drawer-timeline__date">2017–2019</span>
             <span class="drawer-timeline__content">
               예원예술대학교 시각디자인학과 수료
-              <span class="drawer-timeline__sub">학과대표</span>
+              <button class="pexp-btn" aria-expanded="false" data-target="d-yewon-extra">대외활동 <span class="pexp-icon">▾</span></button>
+              <span class="pexp-body" id="d-yewon-extra">
+                <span class="drawer-timeline__sub">학과대표 (2017–2019)</span>
+              </span>
             </span>
           </li>
           <li class="drawer-timeline__item">
             <span class="drawer-timeline__date">2019–2024</span>
             <span class="drawer-timeline__content">
               신한대학교 산업디자인학과 졸업
+              <button class="pexp-btn" aria-expanded="false" data-target="d-sinhan-extra">대외활동 <span class="pexp-icon">▾</span></button>
+              <span class="pexp-body" id="d-sinhan-extra">
+                <span class="drawer-timeline__sub">제3대 총학생회 사무국 국장 (2022–2023)</span>
+                <span class="drawer-timeline__sub">제4대 총학생회 홍보국 국장 (2023–2024)</span>
+              </span>
             </span>
           </li>
           <li class="drawer-timeline__item">
@@ -591,42 +561,58 @@
 
       <!-- Career -->
       <div class="drawer-block">
-        <span class="drawer-block__title">Career</span>
+        <span class="drawer-block__title">Career &amp; Experience</span>
         <ul class="drawer-timeline">
           <li class="drawer-timeline__item">
-            <span class="drawer-timeline__date">2025.01–03</span>
+            <span class="drawer-timeline__date">25.01~25.03<br/>25.12~26.02</span>
             <span class="drawer-timeline__content">
-              제로스토어 사원
-              <span class="drawer-timeline__sub">디자인 및 현장 출장 업무</span>
+              제로스토어 오픈 매니저
+              <span class="drawer-timeline__sub">매장 오픈 지원 및 진열(DP)·운영 세팅 업무 수행</span>
             </span>
           </li>
           <li class="drawer-timeline__item">
-            <span class="drawer-timeline__date">2025.03–07</span>
+            <span class="drawer-timeline__date">25.03~25.12</span>
             <span class="drawer-timeline__content">
-              성균관대학교 TA 조교
+              성균관대학교 학부대학 TA 조교
               <span class="drawer-timeline__sub">교육자료 제작 및 수업보조</span>
             </span>
           </li>
           <li class="drawer-timeline__item">
-            <span class="drawer-timeline__date">2025.07–09</span>
-            <span class="drawer-timeline__content">
-              제로스토어 사원
-              <span class="drawer-timeline__sub">디자인 및 현장 출장 업무</span>
-            </span>
-          </li>
-          <li class="drawer-timeline__item">
-            <span class="drawer-timeline__date">2025.09–12</span>
+            <span class="drawer-timeline__date">25.09~25.12</span>
             <span class="drawer-timeline__content">
               세그루 패션 디자인 고등학교 강사
               <span class="drawer-timeline__sub">GTQ-I 자격증반 수업</span>
             </span>
           </li>
+        </ul>
+      </div>
+
+      <!-- Certifications -->
+      <div class="drawer-block">
+        <span class="drawer-block__title">Certifications</span>
+        <ul class="drawer-timeline">
           <li class="drawer-timeline__item">
-            <span class="drawer-timeline__date">2025.12–2026.02</span>
+            <span class="drawer-timeline__date">2024</span>
             <span class="drawer-timeline__content">
-              제로스토어 사원
-              <span class="drawer-timeline__sub">디자인 및 현장 출장 업무</span>
+              GTQ MASTER
+              <button class="pexp-btn" aria-expanded="false" data-target="d-gtq-extra">상세 <span class="pexp-icon">▾</span></button>
+              <span class="drawer-timeline__sub">포토샵·일러스트·인디자인 1급</span>
+              <span class="pexp-body" id="d-gtq-extra">
+                <span class="pexp-mini-list">
+                  <span class="pexp-mini-item"><span>2024.06</span><span>GTQ 포토샵 1급</span></span>
+                  <span class="pexp-mini-item"><span>2024.08</span><span>GTQ 일러스트 1급</span></span>
+                  <span class="pexp-mini-item"><span>2026.02</span><span>GTQ 인디자인 1급</span></span>
+                </span>
+              </span>
             </span>
+          </li>
+          <li class="drawer-timeline__item">
+            <span class="drawer-timeline__date">2024.10</span>
+            <span class="drawer-timeline__content">컴퓨터그래픽스 운용기능사</span>
+          </li>
+          <li class="drawer-timeline__item">
+            <span class="drawer-timeline__date">2019.10</span>
+            <span class="drawer-timeline__content">운전면허 2종 보통</span>
           </li>
         </ul>
       </div>
@@ -718,47 +704,52 @@
         const content = document.getElementById(contentId);
         if (!btn || !content) return;
 
-        const label = btn.querySelector('.section-toggle__label');
-        const icon  = btn.querySelector('.section-toggle__icon');
+        const label  = btn.querySelector('.section-toggle__label');
+        const icon   = btn.querySelector('.section-toggle__icon');
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
 
-        /* Set initial height for transition */
-        content.style.overflow = 'hidden';
+        content.style.overflow   = 'hidden';
         content.style.transition = 'max-height 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease';
-        content.style.maxHeight  = content.scrollHeight + 'px';
-        content.style.opacity    = '1';
+        content.style.display    = '';          /* clear any inline display:none */
+
+        if (isOpen) {
+          content.style.maxHeight = 'none';
+          content.style.opacity   = '1';
+        } else {
+          content.style.maxHeight = '0';
+          content.style.opacity   = '0';
+        }
 
         btn.addEventListener('click', () => {
           const expanded = btn.getAttribute('aria-expanded') === 'true';
-
           if (expanded) {
-            /* Collapse */
             content.style.maxHeight = content.scrollHeight + 'px';
             requestAnimationFrame(() => {
-              content.style.maxHeight = '0';
-              content.style.opacity   = '0';
+              requestAnimationFrame(() => {
+                content.style.maxHeight = '0';
+                content.style.opacity   = '0';
+              });
             });
             btn.setAttribute('aria-expanded', 'false');
-            label.textContent = 'Show';
-            icon.textContent  = '▼';
+            if (label) label.textContent = 'Show';
+            if (icon)  icon.textContent  = '▼';
           } else {
-            /* Expand */
             content.style.maxHeight = content.scrollHeight + 'px';
             content.style.opacity   = '1';
-            /* Reset to auto after transition so content can grow freely */
             content.addEventListener('transitionend', () => {
-              if (btn.getAttribute('aria-expanded') === 'true') {
-                content.style.maxHeight = 'none';
-              }
+              if (btn.getAttribute('aria-expanded') === 'true') content.style.maxHeight = 'none';
             }, { once: true });
             btn.setAttribute('aria-expanded', 'true');
-            label.textContent = 'Hide';
-            icon.textContent  = '▲';
+            if (label) label.textContent = 'Hide';
+            if (icon)  icon.textContent  = '▲';
           }
         });
       }
 
-      initToggle('workToggle',   'workContent');
-      initToggle('awardsToggle', 'awardsContent');
+      initToggle('aboutToggle',    'aboutContent');
+      initToggle('brandingToggle', 'brandingContent');
+      initToggle('uxuiToggle',     'uxuiContent');
+      initToggle('awardsToggle',   'awardsContent');
     }());
   </script>
 </body>

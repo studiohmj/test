@@ -150,3 +150,19 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
+
+/* --------------------------------------------------------------------------
+   7. INLINE EXPAND (pexp) — show/hide toggles for profile and drawer
+   -------------------------------------------------------------------------- */
+(function () {
+  document.querySelectorAll('.pexp-btn').forEach(function (btn) {
+    var targetId = btn.dataset.target;
+    var body = document.getElementById(targetId);
+    if (!body) return;
+    btn.addEventListener('click', function () {
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      body.classList.toggle('open', !isOpen);
+    });
+  });
+}());

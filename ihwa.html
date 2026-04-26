@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이화공부방 — Jang Hoon Min</title>
+  <meta name="description" content="이화공부방 — 초등 학습 전문 공부방 랜딩 페이지 디자인" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    .ihwa-concept {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .ihwa-concept__item {
+      background: var(--bg);
+      padding: 2.5rem 2.8rem;
+    }
+    .ihwa-concept__num {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--t3);
+      margin-bottom: 1rem;
+    }
+    .ihwa-concept__title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--t1);
+      margin-bottom: 0.7rem;
+      letter-spacing: -0.02em;
+    }
+    .ihwa-concept__body {
+      font-size: 0.875rem;
+      color: var(--t2);
+      line-height: 1.75;
+    }
+    .ihwa-palette {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 3rem;
+    }
+    .ihwa-swatch {
+      flex: 1;
+      height: 80px;
+      display: flex;
+      align-items: flex-end;
+      padding: 0.7rem 0.9rem;
+    }
+    .ihwa-swatch__label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+    .ihwa-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 3rem;
+    }
+    .ihwa-stat {
+      background: var(--bg);
+      padding: 2rem 1.8rem;
+      text-align: center;
+    }
+    .ihwa-stat__num {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #1A6BFF;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .ihwa-stat__unit {
+      font-size: 1rem;
+    }
+    .ihwa-stat__label {
+      font-size: 0.78rem;
+      color: var(--t2);
+    }
+    .ihwa-philosophy {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-top: 2px;
+    }
+    .ihwa-phi {
+      background: var(--bg-alt);
+      padding: 2.2rem 2rem;
+      text-align: center;
+    }
+    .ihwa-phi__tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--t3);
+      margin-bottom: 0.6rem;
+    }
+    .ihwa-phi__text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--t1);
+      margin-bottom: 0.4rem;
+    }
+    .ihwa-phi__sub {
+      font-size: 0.78rem;
+      color: var(--t2);
+    }
+    .ihwa-subjects {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+    }
+    .ihwa-subject {
+      background: var(--bg);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    .ihwa-subject__icon {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 0.7rem;
+    }
+    .ihwa-subject__name {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--t1);
+      margin-bottom: 0.4rem;
+    }
+    .ihwa-subject__desc {
+      font-size: 0.72rem;
+      color: var(--t2);
+      line-height: 1.55;
+    }
+    @media (max-width: 768px) {
+      .ihwa-concept { grid-template-columns: 1fr; }
+      .ihwa-palette { flex-wrap: wrap; }
+      .ihwa-palette .ihwa-swatch { flex: 0 0 calc(50% - 1px); }
+      .ihwa-stats { grid-template-columns: 1fr 1fr; }
+      .ihwa-philosophy { grid-template-columns: 1fr; }
+      .ihwa-subjects { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">Jang Hoon Min</a>
+    <ul class="nav__links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#awards">Awards</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-toggle__icon">☽</span></button>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#about" class="mobile-link">About</a></li>
+      <li><a href="index.html#work" class="mobile-link">Work</a></li>
+      <li><a href="index.html#awards" class="mobile-link">Awards</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <header class="proj-hero">
+    <div class="container">
+      <div class="proj-hero__inner">
+        <a href="index.html#work" class="proj-hero__back">← All Work</a>
+        <div class="proj-hero__meta fade-in">
+          <span class="proj-hero__cat">Web Design · Freelance</span>
+          <span class="proj-hero__sep">·</span>
+          <span class="proj-hero__year">2025</span>
+        </div>
+        <h1 class="proj-hero__title fade-in">이화공부방</h1>
+        <p class="proj-hero__tagline fade-in">아이의 기초를 제대로 잡아주는 곳 — 초등 학습 전문 공부방 랜딩 페이지 디자인</p>
+        <dl class="proj-hero__info fade-in">
+          <div class="proj-hero__info-item"><dt>Role</dt><dd>Web Designer</dd></div>
+          <div class="proj-hero__info-item"><dt>Client</dt><dd>이화공부방 (외주)</dd></div>
+          <div class="proj-hero__info-item"><dt>Year</dt><dd>2025</dd></div>
+          <div class="proj-hero__info-item"><dt>Tools</dt><dd>HTML · CSS · JS · Figma</dd></div>
+        </dl>
+      </div>
+    </div>
+  </header>
+
+  <div class="proj-img proj-img--full fade-in" style="aspect-ratio:16/9; background:var(--bg-alt); display:flex; align-items:center; justify-content:center;">
+    <span style="font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--t3);">Cover Image — Coming Soon</span>
+  </div>
+
+  <!-- Overview -->
+  <section class="proj-section">
+    <div class="container">
+      <div class="proj-split fade-in">
+        <div class="proj-split__label">
+          <p class="proj-overline">Overview</p>
+        </div>
+        <div class="proj-split__body">
+          <p class="proj-body">경기도 의정부에 위치한 초등 학습 전문 공부방. 30년 경력의 원장이 직접 운영하는 소수 정예 공부방의 신뢰와 따뜻함을 웹에 담아냈다.</p>
+          <p class="proj-body">학부모가 서비스 정보를 빠르게 파악하고 상담 신청으로 자연스럽게 이어지도록 UX 흐름을 설계했다. 국어·영어·수학·사회·과학 5개 과목과 선택형 미술 프로그램을 한 페이지 안에서 소개하는 랜딩 페이지다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design Concept -->
+  <section class="proj-section section--alt">
+    <div class="container">
+      <div class="fade-in" style="margin-bottom:2.5rem;">
+        <p class="proj-overline">Design Concept</p>
+      </div>
+      <div class="ihwa-concept fade-in">
+        <div class="ihwa-concept__item">
+          <p class="ihwa-concept__num">01 — Challenge</p>
+          <p class="ihwa-concept__title">수치보다 신뢰가 먼저다</p>
+          <p class="ihwa-concept__body">학원과 공부방은 넘쳐난다. 이화공부방을 선택해야 할 이유는 스펙이 아니라 사람이다. 30년 경력의 원장이 직접 아이를 챙긴다는 진정성을, 숫자와 언어 모두로 전달해야 했다.</p>
+        </div>
+        <div class="ihwa-concept__item">
+          <p class="ihwa-concept__num">02 — Approach</p>
+          <p class="ihwa-concept__title">학부모의 시선으로 설계한 정보 구조</p>
+          <p class="ihwa-concept__body">학부모가 보는 건 세 가지다 — 아이에게 맞는 곳인지, 믿을 수 있는 곳인지, 어떻게 연락하면 되는지. 히어로 → 차별점 → 과목 안내 → 후기 → 상담으로 이어지는 흐름을 최우선으로 설계했다.</p>
+        </div>
+        <div class="ihwa-concept__item">
+          <p class="ihwa-concept__num">03 — Tone</p>
+          <p class="ihwa-concept__title">차분하고 따뜻한 신뢰감</p>
+          <p class="ihwa-concept__body">딱딱한 교육 기관의 느낌이 아닌, 제2의 집 같은 공간을 표현했다. 블루 계열의 신뢰감 있는 색상에 오렌지 포인트를 더해 따뜻함을 함께 담았다.</p>
+        </div>
+        <div class="ihwa-concept__item">
+          <p class="ihwa-concept__num">04 — Copy</p>
+          <p class="ihwa-concept__title">"때로는 친구처럼, 때로는 엄마처럼"</p>
+          <p class="ihwa-concept__body">원장의 교육 철학을 웹 카피로 풀어냈다. 아이가 힘들 때는 친구처럼, 지칠 때는 엄마처럼, 해이해질 때는 엄격하게. 이 세 문장이 이화공부방의 정체성을 담는다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visual Identity -->
+  <section class="proj-section">
+    <div class="container">
+      <div class="fade-in">
+        <p class="proj-overline">Visual Identity</p>
+        <p class="proj-body" style="margin-bottom:2rem;">신뢰와 따뜻함을 동시에. 교육 서비스의 안정감을 블루로, 아이들의 에너지를 오렌지로 표현했다.</p>
+        <div class="ihwa-palette">
+          <div class="ihwa-swatch" style="background:#1A6BFF;">
+            <span class="ihwa-swatch__label" style="color:rgba(255,255,255,0.9);">#1A6BFF — Primary Blue</span>
+          </div>
+          <div class="ihwa-swatch" style="background:#1255D4;">
+            <span class="ihwa-swatch__label" style="color:rgba(255,255,255,0.9);">#1255D4 — Dark Blue</span>
+          </div>
+          <div class="ihwa-swatch" style="background:#EBF2FF; border:1px solid rgba(0,0,0,0.06);">
+            <span class="ihwa-swatch__label" style="color:#1A6BFF;">#EBF2FF — Light Blue</span>
+          </div>
+          <div class="ihwa-swatch" style="background:#FF6B35;">
+            <span class="ihwa-swatch__label" style="color:rgba(255,255,255,0.9);">#FF6B35 — Orange Accent</span>
+          </div>
+          <div class="ihwa-swatch" style="background:#111827;">
+            <span class="ihwa-swatch__label" style="color:rgba(255,255,255,0.7);">#111827 — Dark</span>
+          </div>
+        </div>
+        <p class="proj-overline" style="margin-top:0; margin-bottom:2rem;">Brand Philosophy</p>
+        <div class="ihwa-philosophy">
+          <div class="ihwa-phi">
+            <div class="ihwa-phi__tag">아이가 힘들 때</div>
+            <div class="ihwa-phi__text">때로는 친구처럼</div>
+            <div class="ihwa-phi__sub">마음을 먼저 들어줍니다</div>
+          </div>
+          <div class="ihwa-phi">
+            <div class="ihwa-phi__tag">아이가 지칠 때</div>
+            <div class="ihwa-phi__text">때로는 엄마처럼</div>
+            <div class="ihwa-phi__sub">곁에서 다독여 줍니다</div>
+          </div>
+          <div class="ihwa-phi">
+            <div class="ihwa-phi__tag">아이가 해이해질 때</div>
+            <div class="ihwa-phi__text">때로는 엄격하게</div>
+            <div class="ihwa-phi__sub">바른 습관을 잡아줍니다</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service -->
+  <section class="proj-section section--alt">
+    <div class="container">
+      <div class="fade-in" style="margin-bottom:2.5rem;">
+        <p class="proj-overline">Service</p>
+        <p class="proj-body" style="margin-bottom:0;">학교 수업 진도와 맞춘 5개 과목을 한 공간에서 모두 지도한다.</p>
+      </div>
+      <div class="ihwa-subjects fade-in">
+        <div class="ihwa-subject">
+          <span class="ihwa-subject__icon">📖</span>
+          <div class="ihwa-subject__name">국어</div>
+          <div class="ihwa-subject__desc">독해·받아쓰기·문학·단원 평가</div>
+        </div>
+        <div class="ihwa-subject">
+          <span class="ihwa-subject__icon">🔤</span>
+          <div class="ihwa-subject__name">영어</div>
+          <div class="ihwa-subject__desc">파닉스·어휘·기초 문법·받아쓰기</div>
+        </div>
+        <div class="ihwa-subject">
+          <span class="ihwa-subject__icon">🔢</span>
+          <div class="ihwa-subject__name">수학</div>
+          <div class="ihwa-subject__desc">연산·개념·서술형·오답 관리</div>
+        </div>
+        <div class="ihwa-subject">
+          <span class="ihwa-subject__icon">🌏</span>
+          <div class="ihwa-subject__name">사회</div>
+          <div class="ihwa-subject__desc">지리·역사·사회 현상·시험 대비</div>
+        </div>
+        <div class="ihwa-subject">
+          <span class="ihwa-subject__icon">🔬</span>
+          <div class="ihwa-subject__name">과학</div>
+          <div class="ihwa-subject__desc">핵심 개념·실험 이해·용어 정리</div>
+        </div>
+      </div>
+      <div class="ihwa-stats fade-in">
+        <div class="ihwa-stat">
+          <div class="ihwa-stat__num">30<span class="ihwa-stat__unit">년</span></div>
+          <div class="ihwa-stat__label">원장 운영 경력</div>
+        </div>
+        <div class="ihwa-stat">
+          <div class="ihwa-stat__num">20<span class="ihwa-stat__unit">명</span></div>
+          <div class="ihwa-stat__label">소수 정예 정원</div>
+        </div>
+        <div class="ihwa-stat">
+          <div class="ihwa-stat__num">5<span class="ihwa-stat__unit">과목</span></div>
+          <div class="ihwa-stat__label">전 과목 통합 지도</div>
+        </div>
+        <div class="ihwa-stat">
+          <div class="ihwa-stat__num">90<span class="ihwa-stat__unit">%</span></div>
+          <div class="ihwa-stat__label">6년 이상 재원율</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="img-section fade-in">
+    <div class="img-section__label">Web Design — Hero &amp; Overview</div>
+    <div class="proj-img proj-img--full" style="border:none; aspect-ratio:16/9; background:var(--bg-alt); display:flex; align-items:center; justify-content:center;">
+      <span style="font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--t3);">Image — Coming Soon</span>
+    </div>
+  </div>
+
+  <div class="img-section fade-in">
+    <div class="img-section__label">Web Design — Subject &amp; Service Info</div>
+    <div class="proj-img proj-img--full" style="border:none; aspect-ratio:16/9; background:var(--bg-alt); display:flex; align-items:center; justify-content:center;">
+      <span style="font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--t3);">Image — Coming Soon</span>
+    </div>
+  </div>
+
+  <div class="img-section fade-in">
+    <div class="img-section__label">Mockup Collection</div>
+    <div class="proj-img proj-img--full" style="border:none; aspect-ratio:16/9; background:var(--bg-alt); display:flex; align-items:center; justify-content:center;">
+      <span style="font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--t3);">Image — Coming Soon</span>
+    </div>
+  </div>
+
+  <section class="proj-section proj-section--close">
+    <div class="container">
+      <div class="proj-close fade-in">
+        <div class="proj-close__meta">
+          <dl class="proj-close__dl">
+            <div><dt>Project</dt><dd>이화공부방</dd></div>
+            <div><dt>Year</dt><dd>2025</dd></div>
+            <div><dt>Role</dt><dd>Web Designer</dd></div>
+            <div><dt>Tools</dt><dd>HTML · CSS · JavaScript · Figma</dd></div>
+          </dl>
+        </div>
+        <div class="proj-close__nav">
+          <span class="proj-overline">Next Project</span>
+          <a href="nunchi.html" class="proj-close__next">눈치코치 <span class="proj-close__arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2025 Jang Hoon Min. All rights reserved.</p>
+        <a href="index.html#work" class="footer__back-link">← Back to Work</a>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

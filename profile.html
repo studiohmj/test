@@ -78,18 +78,37 @@
       display: block;
     }
 
+    .profile-hero__nameblock {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .profile-hero__face {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center center;
+      flex-shrink: 0;
+      border: 2px solid var(--border-mid);
+    }
+
     .profile-hero__name {
-      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-size: clamp(2rem, 4vw, 3.5rem);
       font-weight: 900;
       letter-spacing: -0.04em;
       line-height: 1.0;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.2rem;
     }
 
     .profile-hero__role {
-      font-size: 1rem;
-      color: var(--t2);
-      margin-bottom: 3rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--t3);
+      margin-bottom: 0;
     }
 
     /* Info grid — 4-up */
@@ -231,6 +250,60 @@
       .profile-tag-row { grid-template-columns: 1fr; gap: 2rem; }
       .profile-timeline__item { grid-template-columns: 90px 1fr; gap: 0 1rem; }
     }
+
+    /* ── Inline expand toggle ── */
+    .pexp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0 0 0 0.5rem;
+      font-family: inherit;
+      vertical-align: middle;
+      transition: color var(--dur) ease;
+    }
+    .pexp-btn:hover { color: var(--t1); }
+    .pexp-icon {
+      display: inline-block;
+      transition: transform 0.3s ease;
+      font-style: normal;
+    }
+    .pexp-btn[aria-expanded="true"] .pexp-icon { transform: rotate(180deg); }
+
+    .pexp-body {
+      display: block;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.35s ease;
+    }
+    .pexp-body.open { max-height: 200px; opacity: 1; }
+
+    .pexp-mini-list {
+      margin-top: 0.5rem;
+      padding-top: 0.4rem;
+      border-top: 1px solid var(--border);
+    }
+    .pexp-mini-item {
+      display: flex;
+      gap: 1rem;
+      padding: 0.2rem 0;
+      font-size: 0.72rem;
+      color: var(--t2);
+    }
+    .pexp-mini-item span:first-child {
+      color: var(--t3);
+      font-feature-settings: 'tnum';
+      min-width: 48px;
+      flex-shrink: 0;
+    }
   </style>
 </head>
 <body>
@@ -278,13 +351,17 @@
       <div class="profile-hero">
         <div>
           <img src="메인 이미지/메인 포스터 이미지/1.png" alt="Jang Hoon Min — Designing What Remains" class="profile-hero__poster" />
-          <p class="about__photo-note" style="margin-top:0.75rem;">Profile photo — coming soon</p>
         </div>
 
         <div class="profile-hero__right">
           <span class="profile-hero__label">Branding Designer</span>
-          <h1 class="profile-hero__name">Jang<br/>Hoon Min</h1>
-          <p class="profile-hero__role">장훈민</p>
+          <div class="profile-hero__nameblock">
+            <img src="프로필.png" alt="장훈민" class="profile-hero__face" />
+            <div>
+              <h1 class="profile-hero__name">장훈민</h1>
+              <p class="profile-hero__role">Jang Hoon Min</p>
+            </div>
+          </div>
 
           <div class="profile-info-grid">
             <div class="profile-info-item">
@@ -321,15 +398,21 @@
             <span class="profile-timeline__date">2017.03 – 2019.02</span>
             <span class="profile-timeline__content">
               예원예술대학교 시각디자인학과 수료
-              <span class="profile-timeline__sub">수료 후 편입 · 학과대표</span>
+              <button class="pexp-btn" aria-expanded="false" data-target="yewon-extra">대외활동 <span class="pexp-icon">▾</span></button>
+              <span class="pexp-body" id="yewon-extra">
+                <span class="profile-timeline__sub">수료 후 편입 · 학과대표 (2017–2019)</span>
+              </span>
             </span>
           </li>
           <li class="profile-timeline__item">
             <span class="profile-timeline__date">2019.03 – 2024.02</span>
             <span class="profile-timeline__content">
               신한대학교 산업디자인학과 졸업
-              <span class="profile-timeline__sub">제3대 총학생회 사무국 국장 (2022–2023)</span>
-              <span class="profile-timeline__sub">제4대 총학생회 홍보국 국장 (2023–2024)</span>
+              <button class="pexp-btn" aria-expanded="false" data-target="sinhan-extra">대외활동 <span class="pexp-icon">▾</span></button>
+              <span class="pexp-body" id="sinhan-extra">
+                <span class="profile-timeline__sub">제3대 총학생회 사무국 국장 (2022–2023)</span>
+                <span class="profile-timeline__sub">제4대 총학생회 홍보국 국장 (2023–2024)</span>
+              </span>
             </span>
           </li>
           <li class="profile-timeline__item">
@@ -346,38 +429,24 @@
         <span class="profile-block__title">Career &amp; Experience</span>
         <ul class="profile-timeline">
           <li class="profile-timeline__item">
-            <span class="profile-timeline__date">2025.03 – 2025.07</span>
+            <span class="profile-timeline__date">25.01~25.03<br/>25.12~26.02</span>
+            <span class="profile-timeline__content">
+              제로스토어 오픈 매니저
+              <span class="profile-timeline__sub">매장 오픈 지원 및 진열(DP)·운영 세팅 업무 수행</span>
+            </span>
+          </li>
+          <li class="profile-timeline__item">
+            <span class="profile-timeline__date">25.03~25.12</span>
             <span class="profile-timeline__content">
               성균관대학교 학부대학 TA 조교
               <span class="profile-timeline__sub">교육자료 제작 및 수업보조</span>
             </span>
           </li>
           <li class="profile-timeline__item">
-            <span class="profile-timeline__date">2025.01 – 03</span>
-            <span class="profile-timeline__content">
-              제로스토어 사원
-              <span class="profile-timeline__sub">디자인 및 현장 출장 업무</span>
-            </span>
-          </li>
-          <li class="profile-timeline__item">
-            <span class="profile-timeline__date">2025.07 – 09</span>
-            <span class="profile-timeline__content">
-              제로스토어 사원
-              <span class="profile-timeline__sub">디자인 및 현장 출장 업무</span>
-            </span>
-          </li>
-          <li class="profile-timeline__item">
-            <span class="profile-timeline__date">2025.09 – 12</span>
+            <span class="profile-timeline__date">25.09~25.12</span>
             <span class="profile-timeline__content">
               세그루 패션 디자인 고등학교 강사
               <span class="profile-timeline__sub">GTQ-I 자격증반 수업</span>
-            </span>
-          </li>
-          <li class="profile-timeline__item">
-            <span class="profile-timeline__date">2025.12 – 2026.02</span>
-            <span class="profile-timeline__content">
-              제로스토어 사원
-              <span class="profile-timeline__sub">디자인 및 현장 출장 업무</span>
             </span>
           </li>
         </ul>
@@ -395,19 +464,19 @@
                 <span class="profile-list__sub">경찰청 (운전면허시험관리단)</span>
               </li>
               <li class="profile-list__item">
-                <span class="profile-list__date">2024.06</span>
-                <span class="profile-list__name">GTQ 포토샵 1급</span>
-                <span class="profile-list__sub">한국생산성본부 (KPC)</span>
-              </li>
-              <li class="profile-list__item">
-                <span class="profile-list__date">2024.08</span>
-                <span class="profile-list__name">GTQ 일러스트 1급</span>
-                <span class="profile-list__sub">한국생산성본부 (KPC)</span>
-              </li>
-              <li class="profile-list__item">
-                <span class="profile-list__date">2024.10</span>
-                <span class="profile-list__name">GTQ 인디자인 1급</span>
-                <span class="profile-list__sub">한국생산성본부 (KPC)</span>
+                <span class="profile-list__date">2024</span>
+                <span class="profile-list__name">
+                  GTQ MASTER
+                  <button class="pexp-btn" aria-expanded="false" data-target="gtq-extra">상세 <span class="pexp-icon">▾</span></button>
+                </span>
+                <span class="profile-list__sub">한국생산성본부 (KPC) · 포토샵·일러스트·인디자인 1급</span>
+                <div class="pexp-body" id="gtq-extra">
+                  <div class="pexp-mini-list">
+                    <div class="pexp-mini-item"><span>2024.06</span><span>GTQ 포토샵 1급</span></div>
+                    <div class="pexp-mini-item"><span>2024.08</span><span>GTQ 일러스트 1급</span></div>
+                    <div class="pexp-mini-item"><span>2026.02</span><span>GTQ 인디자인 1급</span></div>
+                  </div>
+                </div>
               </li>
               <li class="profile-list__item">
                 <span class="profile-list__date">2024.10</span>
@@ -443,6 +512,7 @@
               <li class="profile-list__item">
                 <span class="profile-list__date">2026.02</span>
                 <span class="profile-list__name">국제창의예술디자인대전 금상</span>
+                <span class="profile-list__sub">창의인성교육문화협회</span>
               </li>
             </ul>
           </div>
