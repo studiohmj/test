@@ -291,7 +291,7 @@ body.dark-mode .nav.scrolled {
 /* Display — above H1, hero-only */
 .hero__statement-line {
   display: block;
-  font-size: clamp(3rem, 4.8vw, 6.5rem);
+  font-size: clamp(3rem, 6.5vw, 8rem);
   font-weight: 900;
   letter-spacing: -0.04em;
   line-height: 0.9;
@@ -299,12 +299,7 @@ body.dark-mode .nav.scrolled {
   text-transform: uppercase;
 }
 
-/* "ARE REMEMBERED" — Playfair italic (user preference, keep as-is) */
 .hero__statement-line--accent {
-  font-style: italic;
-  font-family: var(--serif);
-  font-weight: 700;
-  letter-spacing: -0.025em;
   color: var(--primary);
 }
 

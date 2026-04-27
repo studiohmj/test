@@ -152,7 +152,23 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 /* --------------------------------------------------------------------------
-   7. INLINE EXPAND (pexp) — show/hide toggles for profile and drawer
+   7. PROJECT CARD — click anywhere on image to navigate
+   -------------------------------------------------------------------------- */
+(function () {
+  document.querySelectorAll('.proj__image').forEach(function (img) {
+    const link = img.querySelector('.proj__view-pill');
+    if (!link) return;
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', function (e) {
+      if (!e.target.closest('.proj__view-pill')) {
+        window.location.href = link.href;
+      }
+    });
+  });
+}());
+
+/* --------------------------------------------------------------------------
+   8. INLINE EXPAND (pexp) — show/hide toggles for profile and drawer
    -------------------------------------------------------------------------- */
 (function () {
   document.querySelectorAll('.pexp-btn').forEach(function (btn) {

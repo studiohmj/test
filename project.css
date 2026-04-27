@@ -68,7 +68,7 @@
 
 /* Body */
 .proj-hero__tagline {
-  font-size: 1rem;
+  font-size: 1.0625rem;
   color: var(--t2);
   max-width: 560px;
   line-height: 1.85;
@@ -175,7 +175,7 @@
    TEXT SECTIONS
    -------------------------------------------------------------------------- */
 .proj-section {
-  padding: clamp(5rem, 8vw, 8rem) 0;
+  padding: clamp(3.5rem, 5vw, 5.5rem) 0;
   border-top: 1px solid var(--border);
 }
 
@@ -183,14 +183,17 @@
   background: var(--bg-alt);
 }
 
-/* Overline label */
+/* Overline label — anchored with top accent */
 .proj-overline {
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--primary);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding-top: 0.6rem;
+  border-top: 1.5px solid var(--primary);
 }
 
 /* Wide body text — centered, constrained */
@@ -198,25 +201,29 @@
   max-width: 680px;
 }
 
-/* Body — 16px */
+/* Body */
 .proj-body {
-  font-size: 1rem;
+  font-size: 1.0625rem;
   font-weight: 400;
-  color: var(--t2);
-  line-height: 1.85;
-  margin-bottom: 1.1rem;
+  color: var(--t1);
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
 }
 .proj-body:last-child { margin-bottom: 0; }
 
 /* Split layout: label | body (2-col) */
 .proj-split {
   display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 4rem;
+  grid-template-columns: 160px 1fr;
+  gap: 3.5rem;
   align-items: start;
 }
 
-.proj-split__label { padding-top: 3px; }
+.proj-split__label {
+  padding-top: 3px;
+  position: sticky;
+  top: calc(var(--nav-h) + 2rem);
+}
 
 /* --------------------------------------------------------------------------
    PROJECT CLOSE / CREDITS
@@ -393,5 +400,5 @@
   .proj-hero__title { font-size: clamp(2rem, 12vw, 3.5rem); }
   .proj-hero__info { grid-template-columns: 1fr; }
   .proj-hero__info-item { border-right: none; margin-right: 0; padding-right: 0; }
-  .proj-section { padding: clamp(3rem, 7vw, 5rem) 0; }
+  .proj-section { padding: clamp(2.5rem, 6vw, 4rem) 0; }
 }
