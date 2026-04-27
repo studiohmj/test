@@ -4,7 +4,13 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   0. CURSOR GLOW — blue radial follows mouse
+   0. SCROLL RESTORATION — always start at top on page load
+   -------------------------------------------------------------------------- */
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
+/* --------------------------------------------------------------------------
+   1. CURSOR GLOW — blue radial follows mouse
    -------------------------------------------------------------------------- */
 (function () {
   const glow = document.querySelector('.glow');

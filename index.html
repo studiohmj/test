@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -16,7 +16,10 @@
 
   <!-- NAV -->
   <nav class="nav" id="nav">
-    <div class="nav__logo">Jang Hoon Min</div>
+    <div class="nav__logo">
+      <img src="profile-photo.jpg" alt="장훈민" class="nav__avatar" />
+      Jang Hoon Min
+    </div>
     <ul class="nav__links">
       <li><a href="#about">About</a></li>
       <li><a href="profile.html">Profile</a></li>
@@ -49,11 +52,20 @@
   <section class="hero" id="hero">
     <div class="hero__bg" aria-hidden="true"></div>
 
+    <div class="hero__eyebrow fade-in">
+      <span>Brand Designer</span>
+      <span class="hero__eyebrow-rule"></span>
+      <span>Seoul, Korea</span>
+      <span class="hero__eyebrow-rule"></span>
+      <span>2024 — 2026</span>
+    </div>
+
     <div class="hero__content">
 
       <h1 class="hero__statement">
-        <span class="hero__statement-line line">I DESIGN BRANDS</span>
-        <span class="hero__statement-line hero__statement-line--accent line">THAT STAY IN MEMORY</span>
+        <span class="hero__statement-line line">I DESIGN HOW</span>
+        <span class="hero__statement-line line">BRANDS</span>
+        <span class="hero__statement-line hero__statement-line--accent line">ARE REMEMBERED</span>
       </h1>
 
       <div class="hero__divider"></div>
@@ -115,7 +127,7 @@
         </button>
       </div>
 
-      <div class="section-toggle__body" id="aboutContent" style="display:none">
+      <div class="section-toggle__body" id="aboutContent">
       <!-- ② Photo col + Approach col -->
       <div class="about__main">
 
@@ -271,7 +283,7 @@
         <div class="proj-row proj-row--2">
           <article class="proj fade-in" data-category="brand">
             <div class="proj__image">
-              <img src="메인 이미지/5. yellow house/yellow house (3).jpg" alt="Yellow House" class="proj__img" />
+              <img src="메인 이미지/5. yellow house/yellow house (1).jpg" alt="Yellow House" class="proj__img" />
               <a href="yellowhouse.html" class="proj__view-pill">View Project ↗</a>
             </div>
             <div class="proj__info">
@@ -512,7 +524,7 @@
 
       <!-- Hero -->
       <div class="drawer-hero">
-        <img src="프로필.png" alt="장훈민" class="drawer-hero__img" />
+        <img src="profile-photo.jpg" alt="장훈민" class="drawer-hero__img" />
         <div class="drawer-hero__info">
           <h2 class="drawer-hero__name">장훈민</h2>
           <p class="drawer-hero__sub">Jang Hoon Min</p>

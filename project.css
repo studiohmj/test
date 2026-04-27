@@ -120,10 +120,11 @@
    IMAGE COMPONENTS
    -------------------------------------------------------------------------- */
 
-/* Full-width image — edge to edge */
+/* Full-width image — constrained to layout max-width so it scales with text on zoom */
 .proj-img--full {
   width: 100%;
-  margin: 0;
+  max-width: var(--max);
+  margin: 0 auto;
   overflow: hidden;
   background: var(--bg-alt);
 }
@@ -265,7 +266,35 @@
   line-height: 1.5;
 }
 
-.proj-close__nav { padding-top: 0.25rem; }
+.proj-close__nav {
+  padding-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.proj-close__prev {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--t2);
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  margin-bottom: 2rem;
+  transition: color var(--dur) ease, border-color var(--dur) ease;
+}
+.proj-close__prev:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.proj-close__arrow-left {
+  font-size: 1.1rem;
+  transition: transform var(--dur) ease;
+  flex-shrink: 0;
+}
+.proj-close__prev:hover .proj-close__arrow-left { transform: translateX(-5px); }
 
 .proj-close__next {
   display: flex;
@@ -309,6 +338,13 @@
   background: var(--bg-alt);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
+}
+
+/* Contained variant — image is padded within container, not edge-to-edge */
+.img-section--contained .proj-img {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad) clamp(1.5rem, 2.5vw, 2rem);
 }
 
 .img-section__label {
