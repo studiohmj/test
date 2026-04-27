@@ -7,8 +7,8 @@
    PROJECT HERO
    -------------------------------------------------------------------------- */
 .proj-hero {
-  padding-top: calc(var(--nav-h) + 5rem);
-  padding-bottom: 5rem;
+  padding-top: calc(var(--nav-h) + 3.5rem);
+  padding-bottom: 4rem;
   border-bottom: 1px solid var(--border);
 }
 
@@ -55,6 +55,33 @@
 .proj-hero__sep {
   color: var(--t3);
   font-size: 0.68rem;
+}
+
+/* Live site link inside info dl */
+.proj-hero__live-link {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: opacity var(--dur) ease;
+}
+.proj-hero__live-link:hover { opacity: 0.7; }
+
+/* Award badge — shown in hero when project won an award */
+.proj-hero__award {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 0.35rem 0.9rem;
+  margin-bottom: 2rem;
+}
+.proj-hero__award-badge {
+  font-size: 0.7rem;
 }
 
 /* H1 — project title */
@@ -176,7 +203,7 @@
    TEXT SECTIONS
    -------------------------------------------------------------------------- */
 .proj-section {
-  padding: clamp(3.5rem, 5vw, 5.5rem) 0;
+  padding: clamp(2.5rem, 3.5vw, 4rem) 0;
   border-top: 1px solid var(--border);
 }
 
@@ -349,15 +376,15 @@
 
 .img-section__label {
   width: 100%;
-  padding: 0.9rem var(--pad);
+  padding: 0.65rem var(--pad);
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  font-size: 0.68rem;
+  font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--t2);
+  color: var(--t3);
   background: var(--bg);
   border-bottom: 1px solid var(--border);
   box-sizing: border-box;
@@ -367,6 +394,27 @@
   flex: 1;
   height: 1px;
   background: var(--border);
+}
+
+/* Phone / app mockup — constrained width, centered */
+.proj-img--centered {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.proj-img--centered .proj-img__el {
+  width: 100%;
+  height: auto;
+}
+
+/* Web screenshot grid items — 16:9 ratio */
+.proj-grid__item--web {
+  aspect-ratio: 16 / 9;
+}
+.proj-grid__item--web img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Side-by-side process images (Images 2 + 3) */
