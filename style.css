@@ -707,7 +707,7 @@ body.dark-mode .nav.scrolled {
   line-height: 1.5;
 }
 
-.about__text-col { padding-top: 0.25rem; }
+.about__text-col { padding-top: 0; }
 
 /* Body — 16px / 400 */
 .about__body {
@@ -1045,10 +1045,8 @@ body.dark-mode .nav.scrolled {
   align-items: center;
   justify-content: space-between;
   padding: 3.5rem 0 2rem;
-  border-top: 1px solid var(--border);
 }
 .work__intro + .work__group-header {
-  border-top: none;
   padding-top: 0;
 }
 
@@ -1305,7 +1303,8 @@ body.dark-mode .nav.scrolled {
 /* ── Dimmed state (for future filter use if needed) ──── */
 .proj--dimmed { opacity: 0.2; pointer-events: none; }
 
-/* UX/UI cards — 16:9 to match widescreen design thumbnails */
+/* All project cards — 16:9 to match 1920×1080 thumbnails */
+#brandingContent .proj__image,
 #uxuiContent .proj__image {
   aspect-ratio: 16 / 9;
 }
@@ -1600,6 +1599,8 @@ body.dark-mode .nav.scrolled {
   .hero__role-block     { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 1rem; width: 100%; }
   .hero__cta            { margin-left: 0; }
 
+  /* About section */
+  .about__statement    { font-size: 2rem; }
   .about__main         { grid-template-columns: 1fr; gap: 3.5rem; }
   .about__credentials  { grid-template-columns: 1fr; }
   .about__cred-col     { padding: 2rem 0; border-right: none; border-bottom: 1px solid var(--border); }
@@ -1607,6 +1608,13 @@ body.dark-mode .nav.scrolled {
   .about__cred-col:last-child { border-bottom: none; }
   .about__fact         { flex-direction: column; gap: 0.25rem; }
   .about__fact dd      { text-align: left; }
+
+  /* Work section group header — stack on narrow screens */
+  .work__group-header  { flex-wrap: wrap; gap: 1rem; padding: 2.5rem 0 1.5rem; }
+  .section__title      { font-size: 1.5rem; }
+
+  /* Section header toggle */
+  .section__header     { flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem; padding-bottom: 2rem; }
 
   .stats__grid         { grid-template-columns: repeat(2, 1fr); }
   .stat                { border-right: none; border-bottom: 1px solid var(--border); }
@@ -1616,26 +1624,40 @@ body.dark-mode .nav.scrolled {
   /* Project layout: single column on mobile */
   .proj-row--2,
   .proj-row--3,
-  .proj-row--asym      { grid-template-columns: 1fr; gap: 2.5rem; }
-  .proj-col--sm        { gap: 2.5rem; }
+  .proj-row--asym      { grid-template-columns: 1fr; gap: 2rem; }
+  .proj-col--sm        { gap: 2rem; }
   .work__group         { margin-bottom: 4rem; }
 
-  .award-item          { grid-template-columns: 52px 1fr auto; gap: 1rem; }
-  .award-item__badge   { font-size: 1rem; }
+  /* Awards */
+  .award-item          { grid-template-columns: 52px 1fr auto; gap: 0.75rem; padding: 1.25rem 0; }
+  .award-item__title   { font-size: 0.875rem; }
+  .award-item__org     { font-size: 0.72rem; }
+  .award-item__badge   { font-size: 0.52rem; padding: 0.2rem 0.5rem; }
 
   .timeline-section    { grid-template-columns: 1fr; gap: 3rem; }
 
-  .contact__socials    { gap: 1.5rem; }
+  .contact__socials    { gap: 1.25rem; }
   .footer__inner       { flex-direction: column; align-items: center; gap: 0.5rem; }
 }
 
 @media (max-width: 480px) {
   :root { --pad: 1.25rem; }
-  .section            { padding: 4.5rem 0; }
+  .section            { padding: 3.5rem 0; }
   .stats__grid        { grid-template-columns: 1fr 1fr; }
-  .contact__title     { font-size: 2rem; line-height: 1.15; }
-  .award-item         { grid-template-columns: 44px 1fr; }
-  .award-item__badge  { display: none; }
+  .contact__title     { font-size: 1.75rem; line-height: 1.15; }
+  .about__statement   { font-size: 1.6rem; }
+
+  /* Awards — keep badge visible but compact */
+  .award-item         { grid-template-columns: 40px 1fr auto; gap: 0.6rem; }
+  .award-item__badge  { font-size: 0.48rem; padding: 0.18rem 0.4rem; letter-spacing: 0.08em; }
+  .award-item__title  { font-size: 0.82rem; }
+
+  /* Marquee smaller */
+  .marquee__track     { font-size: 0.58rem; gap: 1.25rem; }
+
+  /* Hero CTA buttons stacked */
+  .hero__cta          { flex-direction: column; width: 100%; }
+  .btn                { width: 100%; justify-content: center; }
 }
 
 /* --------------------------------------------------------------------------
