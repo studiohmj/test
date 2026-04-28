@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>한결 — Jang Hoon Min</title>
+  <meta name="description" content="한결 — 노인을 위한 미술치료 브랜딩" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    /* --- Color Palette Swatches --- */
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(0.6rem, 1.2vw, 1rem);
+      margin-top: 1rem;
+    }
+    .swatch {
+      aspect-ratio: 1 / 1.15;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+    }
+    .swatch--bordered { border: 1px solid var(--border-mid); }
+    .swatch__role {
+      font-size: 0.52rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.65;
+    }
+    .swatch__bottom { display: flex; flex-direction: column; gap: 0.1rem; }
+    .swatch__name { font-size: 0.7rem; font-weight: 600; opacity: 0.9; }
+    .swatch__hex {
+      font-size: 0.6rem;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      opacity: 0.55;
+      letter-spacing: 0.04em;
+    }
+    .swatch--dark  { color: #ffffff; }
+    .swatch--light { color: #111827; }
+
+    /* --- Brand Values List --- */
+    .brand-values {
+      border-top: 1px solid var(--border);
+      margin-top: 1.75rem;
+    }
+    .brand-value {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 1.25rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+    }
+    .brand-value__num {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--primary);
+      font-feature-settings: 'tnum';
+    }
+    .brand-value__text {
+      font-size: 0.86rem;
+      font-weight: 500;
+      color: var(--t1);
+      line-height: 1.5;
+    }
+    .brand-value__sub {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 400;
+      color: var(--t2);
+      margin-top: 0.1rem;
+    }
+
+    /* --- Image Section Wrapper --- */
+    .img-section {
+      background: var(--bg-alt);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .img-section__label {
+      padding: 1.5rem var(--pad);
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+    .img-section__label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* --- Supporting Images (2-up) --- */
+    .img-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .img-pair__item {
+      overflow: hidden;
+      background: var(--surface);
+      aspect-ratio: 4 / 3;
+      position: relative;
+    }
+    .img-pair__item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.55s ease;
+    }
+    .img-pair__item:hover img { transform: scale(1.04); }
+
+    /* Caption inside image */
+    .img-pair__caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%);
+      padding: 1.5rem 1.25rem 0.9rem;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .img-pair__item:hover .img-pair__caption { opacity: 1; }
+
+    /* --- Mockup Section (Image 4) --- */
+    .mockup-section {
+      background: var(--bg-alt);
+    }
+    .mockup-section .proj-img__el {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 600px) {
+      .palette { grid-template-columns: 1fr 1fr; }
+      .swatch { aspect-ratio: 1; }
+      .img-pair { grid-template-columns: 1fr; }
+      .img-pair__item { aspect-ratio: 3 / 2; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">
+      <img src="profile-photo.jpg" alt="장훈민" class="nav__avatar" />
+      Jang Hoon Min
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#awards">Awards</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-toggle__icon">☽</span></button>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#about" class="mobile-link">About</a></li>
+      <li><a href="profile.html" class="mobile-link">Profile</a></li>
+      <li><a href="index.html#work" class="mobile-link">Work</a></li>
+      <li><a href="index.html#awards" class="mobile-link">Awards</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ① PROJECT HERO -->
+  <header class="proj-hero">
+    <div class="container">
+      <div class="proj-hero__inner">
+        <a href="index.html#work" class="proj-hero__back">← All Work</a>
+        <div class="proj-hero__meta fade-in">
+          <span class="proj-hero__cat">Branding Design</span>
+          <span class="proj-hero__sep">·</span>
+          <span class="proj-hero__year">2024</span>
+        </div>
+        <h1 class="proj-hero__title fade-in">한결</h1>
+        <p class="proj-hero__tagline fade-in">붓 끝에 담긴 따뜻한 위로 — 노인을 위한 미술치료 브랜드</p>
+        <dl class="proj-hero__info fade-in">
+          <div class="proj-hero__info-item"><dt>Role</dt><dd>Brand Designer</dd></div>
+          <div class="proj-hero__info-item"><dt>Client</dt><dd>Academic Project</dd></div>
+          <div class="proj-hero__info-item"><dt>Year</dt><dd>2024</dd></div>
+          <div class="proj-hero__info-item"><dt>Scope</dt><dd>Logo · Identity · Collateral</dd></div>
+        </dl>
+      </div>
+    </div>
+  </header>
+
+  <!-- ② MAIN VISUAL — Image 1 -->
+  <div class="proj-img proj-img--full">
+    <img src="메인 이미지/7. 한결/한결 (1).jpg" alt="한결 — main visual" class="proj-img__el" />
+  </div>
+
+  <!-- ③ OVERVIEW -->
+  <section class="proj-section">
+    <div class="container">
+      <div class="proj-text proj-text--wide fade-in">
+        <p class="proj-overline">Overview</p>
+        <p class="proj-body">최근 10년 새 60세 이상 정신질환자가 81% 증가했다. 노인들이 다양한 정신적 문제에 직면하고 있음을 보여주는 이 수치는, 미술치료 브랜딩의 필요성을 직접적으로 가리킨다.</p>
+        <p class="proj-body">한결은 미술치료를 통해 사회적 교류, 자기표현, 정서적 안정이라는 세 가지 가치를 제공하는 브랜드다. 잊고 있던 감정들을 다시 발견하게 하는 것이 목표다.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="img-section img-section--contained fade-in">
+    <div class="img-section__label">Identity System</div>
+    <div class="proj-img proj-img--full" style="border:none;">
+      <img src="메인 이미지/7. 한결/한결 (2).jpg" alt="한결 — identity system" class="proj-img__el" />
+    </div>
+  </div>
+
+  <section class="proj-section">
+    <div class="container">
+      <div class="proj-split fade-in">
+        <div class="proj-split__label">
+          <p class="proj-overline">Concept</p>
+        </div>
+        <div class="proj-split__body">
+          <p class="proj-body">'한결같다' — 변함없이 지속된다는 뜻에서 출발해 안정과 신뢰를 상징했다. 로고의 물결 모양은 치유의 흐름을 표현하고, 붓글씨 스타일의 로고타입이 온기를 더한다.</p>
+
+          <div class="brand-values">
+            <div class="brand-value">
+              <span class="brand-value__num">01</span>
+              <span class="brand-value__text">
+                사회적 교류
+                <span class="brand-value__sub">미술치료를 통해 노인이 타인과 연결되는 경험</span>
+              </span>
+            </div>
+            <div class="brand-value">
+              <span class="brand-value__num">02</span>
+              <span class="brand-value__text">
+                자기표현
+                <span class="brand-value__sub">감정을 형태와 색으로 드러낼 수 있는 공간</span>
+              </span>
+            </div>
+            <div class="brand-value">
+              <span class="brand-value__num">03</span>
+              <span class="brand-value__text">
+                정서적 안정
+                <span class="brand-value__sub">변함없는 브랜드 경험이 주는 심리적 안전감</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="img-section img-section--contained fade-in">
+    <div class="img-section__label">Brand Collateral</div>
+    <div class="proj-img proj-img--full" style="border:none;">
+      <img src="메인 이미지/7. 한결/한결 (3).jpg" alt="한결 — brand collateral" class="proj-img__el" />
+    </div>
+  </div>
+
+  <section class="proj-section">
+    <div class="container">
+      <div class="proj-split fade-in">
+        <div class="proj-split__label">
+          <p class="proj-overline">Visual System</p>
+        </div>
+        <div class="proj-split__body">
+          <p class="proj-body">따뜻함과 신뢰를 동시에 전달하는 세 가지 색으로 팔레트를 구성했다. 하늘색의 개방감, 크림의 부드러움, 네이비의 안정감이 브랜드 전체에 흐른다.</p>
+
+          <div class="palette">
+            <div class="swatch swatch--dark" style="background:#0086C9;">
+              <span class="swatch__role">Primary</span>
+              <div class="swatch__bottom">
+                <span class="swatch__name">Dark Sky Blue</span>
+                <span class="swatch__hex">#0086C9</span>
+              </div>
+            </div>
+            <div class="swatch swatch--light swatch--bordered" style="background:#FFF5E0;">
+              <span class="swatch__role">Background</span>
+              <div class="swatch__bottom">
+                <span class="swatch__name">Cream</span>
+                <span class="swatch__hex">#FFF5E0</span>
+              </div>
+            </div>
+            <div class="swatch swatch--dark" style="background:#00489D;">
+              <span class="swatch__role">Secondary</span>
+              <div class="swatch__bottom">
+                <span class="swatch__name">Deep Navy</span>
+                <span class="swatch__hex">#00489D</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="img-section fade-in">
+    <div class="img-section__label">Mockup Collection</div>
+    <div class="proj-img proj-img--full" style="border:none;">
+      <img src="메인 이미지/7. 한결/한결 (4).jpg" alt="한결 — mockup collection" class="proj-img__el" />
+    </div>
+  </div>
+
+  <section class="proj-section">
+    <div class="container">
+      <div class="proj-split fade-in">
+        <div class="proj-split__label">
+          <p class="proj-overline">Result</p>
+        </div>
+        <div class="proj-split__body">
+          <p class="proj-body">버스 정류장 포스터, 달력, 명함, 사인물까지 일상 곳곳에 스며드는 아이덴티티 시스템을 완성했다. 정서적 돌봄이 필요한 노인들에게 미술치료의 가치를 전하는 브랜드로 구현되었다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT CLOSE / CREDITS -->
+  <section class="proj-section proj-section--close">
+    <div class="container">
+      <div class="proj-close fade-in">
+        <div class="proj-close__meta">
+          <dl class="proj-close__dl">
+            <div><dt>Project</dt><dd>한결</dd></div>
+            <div><dt>Year</dt><dd>2024</dd></div>
+            <div><dt>Role</dt><dd>Brand Designer</dd></div>
+            <div><dt>Tools</dt><dd>Illustrator · Photoshop</dd></div>
+          </dl>
+        </div>
+        <div class="proj-close__nav">
+          <a href="forcare.html" class="proj-close__prev">
+            <span class="proj-close__arrow-left">←</span>
+            For Care
+          </a>
+          <span class="proj-overline">Next Project</span>
+          <a href="neulpureun.html" class="proj-close__next">늘푸른 <span class="proj-close__arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2024 Jang Hoon Min. All rights reserved.</p>
+        <a href="index.html#work" class="footer__back-link">← Back to Work</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

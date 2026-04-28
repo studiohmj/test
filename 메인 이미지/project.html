@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--
+    ✏️ REPLACE: update title and description per project
+    Example: <title>Leporem — Jang Hoon Min</title>
+  -->
+  <title>Project Title — Jang Hoon Min</title>
+  <meta name="description" content="Project detail — Jang Hoon Min, Branding Designer" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">Jang Hoon Min</a>
+    <ul class="nav__links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#awards">Awards</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-toggle__icon">☽</span>
+    </button>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#about"   class="mobile-link">About</a></li>
+      <li><a href="index.html#work"    class="mobile-link">Work</a></li>
+      <li><a href="index.html#awards"  class="mobile-link">Awards</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ============================
+       PROJECT HERO
+  ============================= -->
+  <header class="proj-hero">
+    <div class="container">
+      <div class="proj-hero__inner">
+
+        <!-- Back link -->
+        <a href="index.html#work" class="proj-hero__back">← All Work</a>
+
+        <!-- Project metadata -->
+        <div class="proj-hero__meta fade-in">
+          <!-- ✏️ REPLACE: category and year -->
+          <span class="proj-hero__cat">Branding</span>
+          <span class="proj-hero__sep">·</span>
+          <span class="proj-hero__year">2025</span>
+        </div>
+
+        <!-- Project title -->
+        <!-- ✏️ REPLACE: project title -->
+        <h1 class="proj-hero__title fade-in">
+          Project<br /><em>Title Here</em>
+        </h1>
+
+        <!-- One-line description -->
+        <!-- ✏️ REPLACE: project tagline -->
+        <p class="proj-hero__tagline fade-in">
+          A brand identity system built around clarity, warmth, and visual structure.
+        </p>
+
+        <!-- Project info row -->
+        <dl class="proj-hero__info fade-in">
+          <div class="proj-hero__info-item">
+            <dt>Role</dt>
+            <!-- ✏️ REPLACE -->
+            <dd>Brand Designer</dd>
+          </div>
+          <div class="proj-hero__info-item">
+            <dt>Client</dt>
+            <!-- ✏️ REPLACE -->
+            <dd>— (Personal / Academic)</dd>
+          </div>
+          <div class="proj-hero__info-item">
+            <dt>Year</dt>
+            <!-- ✏️ REPLACE -->
+            <dd>2025</dd>
+          </div>
+          <div class="proj-hero__info-item">
+            <dt>Scope</dt>
+            <!-- ✏️ REPLACE -->
+            <dd>Logo · Identity · Collateral</dd>
+          </div>
+        </dl>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================
+       HERO IMAGE — full width
+  ============================= -->
+  <div class="proj-img proj-img--full fade-in">
+    <!--
+      ✏️ REPLACE src with your image path.
+      Place images inside: assets/[project-folder]/01.jpg
+      Example: assets/leporem/01.jpg
+    -->
+    <img src="assets/leporem/01.jpg" alt="Project overview" class="proj-img__el" />
+  </div>
+
+  <!-- ============================
+       OVERVIEW TEXT
+  ============================= -->
+  <section class="proj-section">
+    <div class="container">
+      <div class="proj-text proj-text--wide fade-in">
+        <p class="proj-overline">Overview</p>
+        <!--
+          ✏️ REPLACE: describe the project background and brief
+        -->
+        <p class="proj-body">
+          Project details to be added. Describe the client background, the design
+          brief, and the core challenge this project set out to solve. What was
+          the starting point? What needed to change?
+        </p>
+        <p class="proj-body">
+          Additional context — market, audience, or brand positioning — can go here.
+          Keep it concise: one or two strong paragraphs that set the stage for the
+          visual work below.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       IMAGE — full width
+  ============================= -->
+  <div class="proj-img proj-img--full fade-in">
+    <!-- ✏️ REPLACE -->
+    <img src="assets/leporem/02.jpg" alt="Brand concept" class="proj-img__el" />
+  </div>
+
+  <!-- ============================
+       SECTION: CONCEPT
+  ============================= -->
+  <section class="proj-section">
+    <div class="container">
+
+      <div class="proj-split fade-in">
+        <div class="proj-split__label">
+          <p class="proj-overline">Concept</p>
+        </div>
+        <div class="proj-split__body">
+          <!-- ✏️ REPLACE: explain the design concept -->
+          <p class="proj-body">
+            Describe the creative concept here — the thinking behind the visual
+            direction. What metaphor, idea, or principle guided the design decisions?
+            How does the concept connect to the brand's values?
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       IMAGE GRID — 2 columns
+  ============================= -->
+  <div class="proj-grid proj-grid--2 fade-in">
+    <!-- ✏️ REPLACE -->
+    <div class="proj-grid__item">
+      <img src="assets/leporem/03.jpg" alt="Logo mark" class="proj-img__el" />
+    </div>
+    <div class="proj-grid__item">
+      <img src="assets/leporem/04.jpg" alt="Logo system" class="proj-img__el" />
+    </div>
+  </div>
+
+  <!-- ============================
+       SECTION: IDENTITY SYSTEM
+  ============================= -->
+  <section class="proj-section">
+    <div class="container">
+
+      <div class="proj-split fade-in">
+        <div class="proj-split__label">
+          <p class="proj-overline">Identity System</p>
+        </div>
+        <div class="proj-split__body">
+          <!-- ✏️ REPLACE: describe the visual identity system -->
+          <p class="proj-body">
+            Describe the identity system — logo construction, color palette, typography,
+            and how they work together. Explain any rules or constraints built into the system.
+          </p>
+          <p class="proj-body">
+            What makes this system flexible? What keeps it consistent? A strong system
+            should work across scales, contexts, and media.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- IMAGE — full width -->
+  <div class="proj-img proj-img--full fade-in">
+    <!-- ✏️ REPLACE -->
+    <img src="assets/leporem/05.jpg" alt="Color palette and typography" class="proj-img__el" />
+  </div>
+
+  <!-- ============================
+       IMAGE GRID — 3 columns
+  ============================= -->
+  <div class="proj-grid proj-grid--3 fade-in">
+    <!-- ✏️ REPLACE each src -->
+    <div class="proj-grid__item">
+      <img src="assets/leporem/06.jpg" alt="Application 1" class="proj-img__el" />
+    </div>
+    <div class="proj-grid__item">
+      <img src="assets/leporem/07.jpg" alt="Application 2" class="proj-img__el" />
+    </div>
+    <div class="proj-grid__item">
+      <img src="assets/leporem/08.jpg" alt="Application 3" class="proj-img__el" />
+    </div>
+  </div>
+
+  <!-- ============================
+       SECTION: APPLICATION
+  ============================= -->
+  <section class="proj-section">
+    <div class="container">
+
+      <div class="proj-split fade-in">
+        <div class="proj-split__label">
+          <p class="proj-overline">Application</p>
+        </div>
+        <div class="proj-split__body">
+          <!-- ✏️ REPLACE: describe how the brand is applied -->
+          <p class="proj-body">
+            Describe how the visual identity was applied across touchpoints —
+            print, digital, packaging, signage, or whatever is relevant to this project.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- IMAGE — full width -->
+  <div class="proj-img proj-img--full fade-in">
+    <!-- ✏️ REPLACE -->
+    <img src="assets/leporem/09.jpg" alt="Final application" class="proj-img__el" />
+  </div>
+
+  <!-- ============================
+       IMAGE GRID — asymmetric (2+1)
+  ============================= -->
+  <div class="proj-grid proj-grid--asym fade-in">
+    <div class="proj-grid__item proj-grid__item--wide">
+      <!-- ✏️ REPLACE -->
+      <img src="assets/leporem/10.jpg" alt="Mockup wide" class="proj-img__el" />
+    </div>
+    <div class="proj-grid__item">
+      <!-- ✏️ REPLACE -->
+      <img src="assets/leporem/11.jpg" alt="Mockup detail" class="proj-img__el" />
+    </div>
+  </div>
+
+  <!-- ============================
+       FINAL IMAGE — full width
+  ============================= -->
+  <div class="proj-img proj-img--full fade-in">
+    <!-- ✏️ REPLACE -->
+    <img src="assets/leporem/12.jpg" alt="Final brand presentation" class="proj-img__el" />
+  </div>
+
+  <!-- ============================
+       CREDITS / CLOSE
+  ============================= -->
+  <section class="proj-section proj-section--close">
+    <div class="container">
+      <div class="proj-close fade-in">
+
+        <div class="proj-close__meta">
+          <dl class="proj-close__dl">
+            <div>
+              <dt>Project</dt>
+              <!-- ✏️ REPLACE -->
+              <dd>Project Title</dd>
+            </div>
+            <div>
+              <dt>Year</dt>
+              <dd>2025</dd>
+            </div>
+            <div>
+              <dt>Role</dt>
+              <dd>Brand Designer</dd>
+            </div>
+            <div>
+              <dt>Tools</dt>
+              <!-- ✏️ REPLACE -->
+              <dd>Figma · Illustrator · InDesign</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Next project nav -->
+        <div class="proj-close__nav">
+          <span class="proj-overline">Next Project</span>
+          <!-- ✏️ REPLACE href and title -->
+          <a href="project.html" class="proj-close__next">
+            Next Project Title
+            <span class="proj-close__arrow">→</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2026 Jang Hoon Min. All rights reserved.</p>
+        <a href="index.html#work" class="footer__back-link">← Back to Work</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

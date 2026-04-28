@@ -1,0 +1,501 @@
+/* ==========================================================================
+   project.css — Project detail page styles
+   Inherits all tokens from style.css
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   PROJECT HERO
+   -------------------------------------------------------------------------- */
+.proj-hero {
+  padding-top: calc(var(--nav-h) + 3.5rem);
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.proj-hero__back {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--t2);
+  margin-bottom: 3rem;
+  transition: color var(--dur) ease;
+  position: relative;
+}
+.proj-hero__back::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 100%; height: 1px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--dur) ease;
+}
+.proj-hero__back:hover { color: var(--t1); }
+.proj-hero__back:hover::after { transform: scaleX(1); transform-origin: left; }
+
+.proj-hero__meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.proj-hero__cat,
+.proj-hero__year {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.proj-hero__sep {
+  color: var(--t3);
+  font-size: 0.68rem;
+}
+
+/* Live site link inside info dl */
+.proj-hero__live-link {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: opacity var(--dur) ease;
+}
+.proj-hero__live-link:hover { opacity: 0.7; }
+
+/* Award badge — shown in hero when project won an award */
+.proj-hero__award {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  padding: 0.35rem 0.9rem;
+  margin-bottom: 2rem;
+}
+.proj-hero__award-badge {
+  font-size: 0.7rem;
+}
+
+/* H1 — project title */
+.proj-hero__title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1.0;
+  margin-bottom: 2rem;
+}
+
+/* Body */
+.proj-hero__tagline {
+  font-size: 1.0625rem;
+  color: var(--t2);
+  max-width: 560px;
+  line-height: 1.85;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+.proj-hero__info {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 0;
+  border-top: 1px solid var(--border);
+  width: fit-content;
+}
+
+.proj-hero__info-item {
+  padding: 1.25rem 2.5rem 1.25rem 0;
+  margin-right: 2.5rem;
+  border-right: 1px solid var(--border);
+  border-top: 3px solid transparent;
+  transition: border-color var(--dur) ease;
+}
+.proj-hero__info-item:last-child {
+  border-right: none;
+  margin-right: 0;
+  padding-right: 0;
+}
+.proj-hero__info-item:first-child {
+  border-top-color: var(--primary);
+}
+
+.proj-hero__info-item dt {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--t3);
+  margin-bottom: 0.4rem;
+}
+
+.proj-hero__info-item dd {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--t1);
+  line-height: 1.4;
+}
+
+/* --------------------------------------------------------------------------
+   IMAGE COMPONENTS
+   -------------------------------------------------------------------------- */
+
+/* Full-bleed — spans full viewport width */
+.proj-img--full {
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+
+.proj-img__el {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Image grid — 2 columns */
+.proj-grid {
+  display: grid;
+  gap: clamp(2px, 0.25vw, 4px);
+  background: var(--bg);
+  margin: 0;
+}
+
+.proj-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* 3 columns */
+.proj-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Asymmetric: 2/3 + 1/3 */
+.proj-grid--asym {
+  grid-template-columns: 2fr 1fr;
+}
+
+.proj-grid__item {
+  overflow: hidden;
+  background: var(--bg-alt);
+  line-height: 0; /* remove whitespace below img */
+}
+
+.proj-grid__item .proj-img__el {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.proj-grid__item:hover .proj-img__el { transform: scale(1.03); }
+
+/* --------------------------------------------------------------------------
+   TEXT SECTIONS
+   -------------------------------------------------------------------------- */
+.proj-section {
+  padding: clamp(2.5rem, 3.5vw, 4rem) 0;
+  border-top: 1px solid var(--border);
+}
+
+.proj-section--close {
+  background: var(--bg-alt);
+}
+
+/* Overline label — anchored with top accent */
+.proj-overline {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  padding-top: 0.6rem;
+  border-top: 1.5px solid var(--primary);
+}
+
+/* Wide body text — centered, constrained */
+.proj-text--wide {
+  max-width: 680px;
+}
+
+/* Body */
+.proj-body {
+  font-size: 1.0625rem;
+  font-weight: 400;
+  color: var(--t1);
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
+}
+.proj-body:last-child { margin-bottom: 0; }
+
+/* Split layout: label | body (2-col) */
+.proj-split {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+.proj-split__label {
+  padding-top: 3px;
+  position: sticky;
+  top: calc(var(--nav-h) + 2rem);
+}
+
+/* --------------------------------------------------------------------------
+   PROJECT CLOSE / CREDITS
+   -------------------------------------------------------------------------- */
+.proj-close {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.proj-close__dl {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.proj-close__dl > div {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.proj-close__dl dt {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--t3);
+  padding-top: 2px;
+}
+
+.proj-close__dl dd {
+  font-size: 0.85rem;
+  color: var(--t1);
+  line-height: 1.5;
+}
+
+.proj-close__nav {
+  padding-top: 0.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.proj-close__prev {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: clamp(0.85rem, 1.4vw, 1.1rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--t2);
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+  margin-bottom: 2rem;
+  transition: color var(--dur) ease, border-color var(--dur) ease;
+}
+.proj-close__prev:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+.proj-close__arrow-left {
+  font-size: 1.1rem;
+  transition: transform var(--dur) ease;
+  flex-shrink: 0;
+}
+.proj-close__prev:hover .proj-close__arrow-left { transform: translateX(-5px); }
+
+.proj-close__next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--t1);
+  border-bottom: 1.5px solid var(--border);
+  padding-bottom: 1rem;
+  margin-top: 1.25rem;
+  transition: color var(--dur) ease, border-color var(--dur) ease;
+}
+.proj-close__next:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.proj-close__arrow {
+  font-size: 1.5rem;
+  transition: transform var(--dur) ease;
+}
+.proj-close__next:hover .proj-close__arrow { transform: translateX(6px); }
+
+/* Footer link */
+.footer__back-link {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--t2);
+  transition: color var(--dur) ease;
+}
+.footer__back-link:hover { color: var(--primary); }
+
+/* --------------------------------------------------------------------------
+   IMAGE SECTION — process / mockup wrappers (shared across all project pages)
+   -------------------------------------------------------------------------- */
+.img-section {
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Contained variant — image is padded within container, not edge-to-edge */
+.img-section--contained .proj-img {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+.img-section__label {
+  width: 100%;
+  padding: 0.65rem var(--pad);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--t3);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  box-sizing: border-box;
+}
+.img-section__label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Phone / app mockup — constrained width, centered */
+.proj-img--centered {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.proj-img--centered .proj-img__el {
+  width: 100%;
+  height: auto;
+}
+
+/* Web screenshot grid items — 16:9 ratio */
+.proj-grid__item--web {
+  aspect-ratio: 16 / 9;
+}
+.proj-grid__item--web img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Side-by-side process images (Images 2 + 3) */
+.img-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+.img-pair__item {
+  overflow: hidden;
+  background: var(--surface);
+  aspect-ratio: 4 / 3;
+  position: relative;
+}
+.img-pair__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.img-pair__item:hover img { transform: scale(1.04); }
+.img-pair__caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 100%);
+  padding: 1.5rem 1.25rem 0.9rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.img-pair__item:hover .img-pair__caption { opacity: 1; }
+
+@media (max-width: 600px) {
+  .img-pair { grid-template-columns: 1fr; }
+  .img-pair__item { aspect-ratio: 3 / 2; }
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .proj-hero { padding-top: calc(var(--nav-h) + 2.5rem); padding-bottom: 3rem; }
+  .proj-hero__title { font-size: clamp(2.2rem, 8vw, 4rem); }
+  .proj-hero__tagline { font-size: 0.95rem; margin-bottom: 2rem; }
+  .proj-hero__award { font-size: 0.58rem; padding: 0.28rem 0.7rem; margin-bottom: 1.5rem; }
+
+  .proj-hero__info { grid-template-columns: repeat(2, 1fr); width: 100%; gap: 0; }
+  .proj-hero__info-item { padding-right: 1rem; margin-right: 1rem; padding-top: 1rem; padding-bottom: 1rem; }
+
+  .proj-grid--2,
+  .proj-grid--3   { grid-template-columns: 1fr; }
+  .proj-grid--asym { grid-template-columns: 1fr; }
+
+  /* img-section label wraps */
+  .img-section__label { font-size: 0.55rem; padding: 0.55rem var(--pad); }
+
+  .proj-split { grid-template-columns: 1fr; gap: 1rem; }
+  .proj-split__label { position: static; }
+
+  .proj-body { font-size: 0.95rem; }
+
+  .proj-close { grid-template-columns: 1fr; gap: 2.5rem; }
+  .proj-close__dl > div { grid-template-columns: 72px 1fr; }
+  .proj-close__next { font-size: 1.25rem; }
+}
+
+@media (max-width: 480px) {
+  .proj-hero__info { grid-template-columns: 1fr 1fr; }
+  .proj-hero__info-item { padding-right: 0.75rem; margin-right: 0.75rem; }
+  .proj-section { padding: 2rem 0; }
+
+  /* 3-column grid → 2 columns on small mobile */
+  .proj-grid--3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 380px) {
+  .proj-hero__title { font-size: clamp(1.9rem, 12vw, 3rem); }
+  .proj-hero__info { grid-template-columns: 1fr 1fr; }
+  .proj-hero__info-item { border-right: none; margin-right: 0; padding-right: 0; }
+  .proj-section { padding: 1.75rem 0; }
+  .proj-grid--3 { grid-template-columns: 1fr; }
+}

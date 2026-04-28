@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile — Jang Hoon Min</title>
+  <meta name="description" content="Jang Hoon Min — Branding Designer" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+  <style>
+    /* ---------- Profile page specific ---------- */
+
+    .profile-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .profile-breadcrumb__back {
+      color: var(--t2);
+      transition: color var(--dur) ease;
+      position: relative;
+    }
+    .profile-breadcrumb__back::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0;
+      width: 100%; height: 1px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform var(--dur) ease;
+    }
+    .profile-breadcrumb__back:hover { color: var(--t1); }
+    .profile-breadcrumb__back:hover::after { transform: scaleX(1); transform-origin: left; }
+
+    .profile-breadcrumb__sep { color: var(--t3); }
+    .profile-breadcrumb__cur { color: var(--primary); }
+
+    .profile-page {
+      padding-top: calc(var(--nav-h) + 5rem);
+      padding-bottom: 8rem;
+    }
+
+    .profile-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+      padding-bottom: 5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 5rem;
+    }
+
+    .profile-hero__poster {
+      width: 100%;
+      display: block;
+    }
+
+    .profile-hero__right {
+      padding-top: 1rem;
+    }
+
+    .profile-hero__label {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .profile-hero__nameblock {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .profile-hero__face {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 15%;
+      flex-shrink: 0;
+      border: 2px solid var(--border-mid);
+    }
+
+    .profile-hero__name {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1.0;
+      margin-bottom: 0.2rem;
+    }
+
+    .profile-hero__role {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: var(--t3);
+      margin-bottom: 0;
+    }
+
+    /* Info grid — 4-up */
+    .profile-info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .profile-info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      padding: 1rem 1.5rem 1rem 0;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .profile-info-item:nth-child(even) { border-right: none; padding-right: 0; padding-left: 1.5rem; }
+    .profile-info-item:nth-last-child(-n+2) { border-bottom: none; }
+
+    .profile-info-label {
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--t3);
+    }
+
+    .profile-info-value {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--t1);
+    }
+
+    /* Section blocks */
+    .profile-block {
+      margin-bottom: 4.5rem;
+    }
+
+    .profile-block__title {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    /* Timeline */
+    .profile-timeline {
+      list-style: none;
+    }
+
+    .profile-timeline__item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 0 2rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: baseline;
+    }
+    .profile-timeline__item:first-child { border-top: 1px solid var(--border); }
+
+    .profile-timeline__date {
+      font-size: 0.7rem;
+      color: var(--t3);
+      letter-spacing: 0.03em;
+    }
+
+    .profile-timeline__content {
+      font-size: 0.87rem;
+      font-weight: 500;
+      color: var(--t1);
+      line-height: 1.5;
+    }
+
+    .profile-timeline__sub {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--t3);
+      margin-top: 0.15rem;
+    }
+
+    /* Cert & Awards 2-col */
+    .profile-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 5rem;
+    }
+
+    .profile-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .profile-list__item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .profile-list__item:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .profile-list__name {
+      font-size: 0.87rem;
+      font-weight: 600;
+      color: var(--t1);
+    }
+
+    .profile-list__sub {
+      font-size: 0.72rem;
+      color: var(--t3);
+    }
+
+    .profile-list__date {
+      font-size: 0.68rem;
+      color: var(--t3);
+      letter-spacing: 0.03em;
+      margin-bottom: 0.1rem;
+    }
+
+    /* Tags */
+    .profile-tag-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 5rem;
+    }
+
+    @media (max-width: 768px) {
+      .profile-hero { grid-template-columns: 1fr; gap: 3rem; }
+      .profile-info-grid { grid-template-columns: 1fr 1fr; }
+      .profile-cols { grid-template-columns: 1fr; gap: 3rem; }
+      .profile-tag-row { grid-template-columns: 1fr; gap: 2rem; }
+      .profile-timeline__item { grid-template-columns: 90px 1fr; gap: 0 1rem; }
+    }
+
+    /* ── Inline expand toggle ── */
+    .pexp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0 0 0 0.5rem;
+      font-family: inherit;
+      vertical-align: middle;
+      transition: color var(--dur) ease;
+    }
+    .pexp-btn:hover { color: var(--t1); }
+    .pexp-icon {
+      display: inline-block;
+      transition: transform 0.3s ease;
+      font-style: normal;
+    }
+    .pexp-btn[aria-expanded="true"] .pexp-icon { transform: rotate(180deg); }
+
+    .pexp-body {
+      display: block;
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.35s ease;
+    }
+    .pexp-body.open { max-height: 200px; opacity: 1; }
+
+    .pexp-mini-list {
+      margin-top: 0.5rem;
+      padding-top: 0.4rem;
+      border-top: 1px solid var(--border);
+    }
+    .pexp-mini-item {
+      display: flex;
+      gap: 1rem;
+      padding: 0.2rem 0;
+      font-size: 0.72rem;
+      color: var(--t2);
+    }
+    .pexp-mini-item span:first-child {
+      color: var(--t3);
+      font-feature-settings: 'tnum';
+      min-width: 48px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="glow" aria-hidden="true"></div>
+
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">Jang Hoon Min</a>
+    <ul class="nav__links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="profile.html" class="active-link">Profile</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#awards">Awards</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <span class="theme-toggle__icon">☽</span>
+    </button>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#about" class="mobile-link">About</a></li>
+      <li><a href="profile.html"     class="mobile-link">Profile</a></li>
+      <li><a href="index.html#work"  class="mobile-link">Work</a></li>
+      <li><a href="index.html#awards" class="mobile-link">Awards</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main class="profile-page">
+    <div class="container">
+
+      <!-- Back + Breadcrumb -->
+      <div class="profile-breadcrumb">
+        <a href="index.html" class="profile-breadcrumb__back">← Back to Portfolio</a>
+        <span class="profile-breadcrumb__sep">·</span>
+        <span class="profile-breadcrumb__cur">Profile</span>
+      </div>
+
+      <!-- Hero: Poster + Info -->
+      <div class="profile-hero">
+        <div>
+          <img src="메인 이미지/메인 포스터 이미지/1.png" alt="Jang Hoon Min — Designing What Remains" class="profile-hero__poster" />
+        </div>
+
+        <div class="profile-hero__right">
+          <span class="profile-hero__label">Branding Designer</span>
+          <div class="profile-hero__nameblock">
+            <img src="profile-photo.jpg" alt="장훈민" class="profile-hero__face" />
+            <div>
+              <h1 class="profile-hero__name">장훈민</h1>
+              <p class="profile-hero__role">Jang Hoon Min</p>
+            </div>
+          </div>
+
+          <div class="profile-info-grid">
+            <div class="profile-info-item">
+              <span class="profile-info-label">생년월일</span>
+              <span class="profile-info-value">1998.12.12</span>
+            </div>
+            <div class="profile-info-item">
+              <span class="profile-info-label">연락처</span>
+              <span class="profile-info-value">010.5096.6634</span>
+            </div>
+            <div class="profile-info-item">
+              <span class="profile-info-label">이메일</span>
+              <span class="profile-info-value">wkdgnsals12@gmail.com</span>
+            </div>
+            <div class="profile-info-item">
+              <span class="profile-info-label">위치</span>
+              <span class="profile-info-value">Seoul, Korea</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education (학력) -->
+      <div class="profile-block">
+        <span class="profile-block__title">Education</span>
+        <ul class="profile-timeline">
+          <li class="profile-timeline__item">
+            <span class="profile-timeline__date">2014.02 – 2017.02</span>
+            <span class="profile-timeline__content">
+              의정부고등학교 졸업
+            </span>
+          </li>
+          <li class="profile-timeline__item">
+            <span class="profile-timeline__date">2017.03 – 2019.02</span>
+            <span class="profile-timeline__content">
+              예원예술대학교 시각디자인학과 수료
+              <button class="pexp-btn" aria-expanded="false" data-target="yewon-extra">대외활동 <span class="pexp-icon">▾</span></button>
+              <span class="pexp-body" id="yewon-extra">
+                <span class="profile-timeline__sub">수료 후 편입 · 학과대표 (2017–2019)</span>
+              </span>
+            </span>
+          </li>
+          <li class="profile-timeline__item">
+            <span class="profile-timeline__date">2019.03 – 2024.02</span>
+            <span class="profile-timeline__content">
+              신한대학교 산업디자인학과 졸업
+              <button class="pexp-btn" aria-expanded="false" data-target="sinhan-extra">대외활동 <span class="pexp-icon">▾</span></button>
+              <span class="pexp-body" id="sinhan-extra">
+                <span class="profile-timeline__sub">제3대 총학생회 사무국 국장 (2022–2023)</span>
+                <span class="profile-timeline__sub">제4대 총학생회 홍보국 국장 (2023–2024)</span>
+              </span>
+            </span>
+          </li>
+          <li class="profile-timeline__item">
+            <span class="profile-timeline__date">2025.03 –</span>
+            <span class="profile-timeline__content">
+              성균관대학교 일반대학원 커뮤니케이션디자인학과
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Career Experience (경력) -->
+      <div class="profile-block">
+        <span class="profile-block__title">Career &amp; Experience</span>
+        <ul class="profile-timeline">
+          <li class="profile-timeline__item">
+            <span class="profile-timeline__date">2025.01~2025.03<br/>2025.12~2026.02</span>
+            <span class="profile-timeline__content">
+              제로스토어 오픈 매니저
+              <span class="profile-timeline__sub">매장 오픈 지원 및 진열(DP)·운영 세팅 업무 수행</span>
+            </span>
+          </li>
+          <li class="profile-timeline__item">
+            <span class="profile-timeline__date">2025.03~2025.12</span>
+            <span class="profile-timeline__content">
+              성균관대학교 학부대학 TA 조교
+              <span class="profile-timeline__sub">교육자료 제작 및 수업보조</span>
+            </span>
+          </li>
+          <li class="profile-timeline__item">
+            <span class="profile-timeline__date">2025.09~2025.12</span>
+            <span class="profile-timeline__content">
+              세그루 패션 디자인 고등학교 강사
+              <span class="profile-timeline__sub">GTQ-I 자격증반 수업</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Licenses + Awards -->
+      <div class="profile-block">
+        <div class="profile-cols">
+          <div>
+            <span class="profile-block__title">Licenses</span>
+            <ul class="profile-list">
+              <li class="profile-list__item">
+                <span class="profile-list__date">2019.10</span>
+                <span class="profile-list__name">운전면허 2종 보통</span>
+                <span class="profile-list__sub">경찰청 (운전면허시험관리단)</span>
+              </li>
+              <li class="profile-list__item">
+                <span class="profile-list__date">2024</span>
+                <span class="profile-list__name">
+                  GTQ Master
+                  <button class="pexp-btn" aria-expanded="false" data-target="gtq-extra">상세 <span class="pexp-icon">▾</span></button>
+                </span>
+                <span class="profile-list__sub">한국생산성본부 (KPC)</span>
+                <div class="pexp-body" id="gtq-extra">
+                  <div class="pexp-mini-list">
+                    <div class="pexp-mini-item"><span>2024.06</span><span>GTQ 포토샵 1급</span></div>
+                    <div class="pexp-mini-item"><span>2024.08</span><span>GTQ 일러스트 1급</span></div>
+                    <div class="pexp-mini-item"><span>2026.02</span><span>GTQ 인디자인 1급</span></div>
+                  </div>
+                </div>
+              </li>
+              <li class="profile-list__item">
+                <span class="profile-list__date">2024.10</span>
+                <span class="profile-list__name">컴퓨터그래픽스 운용기능사</span>
+                <span class="profile-list__sub">한국산업인력공단</span>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <span class="profile-block__title">Awards</span>
+            <ul class="profile-list">
+              <li class="profile-list__item">
+                <span class="profile-list__date">2023.11</span>
+                <span class="profile-list__name">2023 청년디자인 멘토단 공로상</span>
+                <span class="profile-list__sub">의정부시 중장년 기술창업지원센터</span>
+              </li>
+              <li class="profile-list__item">
+                <span class="profile-list__date">2023.12</span>
+                <span class="profile-list__name">2023 청년.디자인 콘텐츠 지원단 공로상</span>
+                <span class="profile-list__sub">의정부시 1인 창조기업 지원센터</span>
+              </li>
+              <li class="profile-list__item">
+                <span class="profile-list__date">2024.02</span>
+                <span class="profile-list__name">신한대학교 모범 졸업생 표창</span>
+                <span class="profile-list__sub">신한대학교</span>
+              </li>
+              <li class="profile-list__item">
+                <span class="profile-list__date">2025.06</span>
+                <span class="profile-list__name">제8회 GCD4FE 미래교육 디자인 공모전 최우수 기획상</span>
+                <span class="profile-list__sub">GCD4FE · 동아시아 지역 예선 Best Planning Award</span>
+              </li>
+              <li class="profile-list__item">
+                <span class="profile-list__date">2026.02</span>
+                <span class="profile-list__name">국제창의예술디자인대전 금상</span>
+                <span class="profile-list__sub">창의인성교육문화협회</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Focus + Tools -->
+      <div class="profile-block">
+        <div class="profile-tag-row">
+          <div>
+            <span class="profile-block__title">Focus Areas</span>
+            <div class="about__tags" style="margin-top:0.5rem;">
+              <span class="tag">Branding</span>
+              <span class="tag">Visual Identity</span>
+              <span class="tag">Editorial Design</span>
+              <span class="tag">Graphic Design</span>
+              <span class="tag">UI / Web Design</span>
+              <span class="tag">Art Direction</span>
+            </div>
+          </div>
+          <div>
+            <span class="profile-block__title">Tools</span>
+            <div class="about__tags" style="margin-top:0.5rem;">
+              <span class="tag">Figma</span>
+              <span class="tag">Illustrator</span>
+              <span class="tag">Photoshop</span>
+              <span class="tag">InDesign</span>
+              <span class="tag">After Effects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding-top:2rem; border-top:1px solid var(--border);">
+        <a href="index.html" class="footer__back-link">← Back to Portfolio</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2024 Jang Hoon Min. All rights reserved.</p>
+        <a href="index.html#work" class="footer__back-link">← Back to Work</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

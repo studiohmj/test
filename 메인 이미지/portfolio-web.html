@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>포트폴리오 웹디자인 — Jang Hoon Min</title>
+  <meta name="description" content="포트폴리오 웹디자인 — 브랜딩 포트폴리오 웹사이트 직접 설계 및 구현" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="project.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="glow" aria-hidden="true"></div>
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav__logo">Jang Hoon Min</a>
+    <ul class="nav__links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#awards">Awards</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-toggle__icon">☽</span></button>
+    <button class="nav__hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="index.html#about" class="mobile-link">About</a></li>
+      <li><a href="index.html#work" class="mobile-link">Work</a></li>
+      <li><a href="index.html#awards" class="mobile-link">Awards</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <header class="proj-hero">
+    <div class="container">
+      <div class="proj-hero__inner">
+        <a href="index.html#work" class="proj-hero__back">← All Work</a>
+        <div class="proj-hero__meta fade-in">
+          <span class="proj-hero__cat">Web Design</span>
+          <span class="proj-hero__sep">·</span>
+          <span class="proj-hero__year">2026</span>
+        </div>
+        <h1 class="proj-hero__title fade-in">포트폴리오 웹디자인</h1>
+        <p class="proj-hero__tagline fade-in">브랜드가 기억되는 방식을 설계한다 — 직접 디자인하고 구현한 포트폴리오 웹사이트</p>
+        <dl class="proj-hero__info fade-in">
+          <div class="proj-hero__info-item"><dt>Role</dt><dd>Designer &amp; Developer</dd></div>
+          <div class="proj-hero__info-item"><dt>Client</dt><dd>Personal Project</dd></div>
+          <div class="proj-hero__info-item"><dt>Year</dt><dd>2026</dd></div>
+          <div class="proj-hero__info-item"><dt>Scope</dt><dd>Web Design · Front-end</dd></div>
+        </dl>
+      </div>
+    </div>
+  </header>
+
+  <div class="proj-img proj-img--full fade-in" style="aspect-ratio:16/9; background:var(--bg-alt); display:flex; align-items:center; justify-content:center;">
+    <span style="font-size:0.7rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--t3);">Cover Image — Coming Soon</span>
+  </div>
+
+  <section class="proj-section">
+    <div class="container">
+      <div class="proj-text proj-text--wide fade-in">
+        <p class="proj-overline">Overview</p>
+        <p class="proj-body">타이포그래피 중심의 에디토리얼 레이아웃, 다크·라이트 모드 지원, 부드러운 스크롤 인터랙션까지 — 브랜드 디자이너의 정체성을 그대로 담아낸 포트폴리오 웹사이트를 직접 설계하고 HTML/CSS/JS로 구현했다.</p>
+        <p class="proj-body">프레임워크 없이 순수 웹 기술만으로 고품질 인터페이스를 구현하는 것이 이 프로젝트의 핵심 도전이었다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="proj-section proj-section--close">
+    <div class="container">
+      <div class="proj-close fade-in">
+        <div class="proj-close__meta">
+          <dl class="proj-close__dl">
+            <div><dt>Project</dt><dd>포트폴리오 웹</dd></div>
+            <div><dt>Year</dt><dd>2026</dd></div>
+            <div><dt>Role</dt><dd>Designer &amp; Developer</dd></div>
+            <div><dt>Tools</dt><dd>HTML · CSS · JavaScript · Figma</dd></div>
+          </dl>
+        </div>
+        <div class="proj-close__nav">
+          <span class="proj-overline">Next Project</span>
+          <a href="edustay.html" class="proj-close__next">Edustay <span class="proj-close__arrow">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__copy">© 2026 Jang Hoon Min. All rights reserved.</p>
+        <a href="index.html#work" class="footer__back-link">← Back to Work</a>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
